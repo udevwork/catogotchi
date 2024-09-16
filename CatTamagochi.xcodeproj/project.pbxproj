@@ -3,24 +3,99 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920781C42C95BB3500DE2FB9 /* idle.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781BA2C95BB3300DE2FB9 /* idle.mp4 */; };
+		920781C52C95BB3500DE2FB9 /* medicine.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781BB2C95BB3300DE2FB9 /* medicine.mp4 */; };
+		920781C62C95BB3500DE2FB9 /* engry.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781BC2C95BB3400DE2FB9 /* engry.mp4 */; };
+		920781C72C95BB3500DE2FB9 /* happy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781BD2C95BB3400DE2FB9 /* happy.mp4 */; };
+		920781C82C95BB3500DE2FB9 /* dead.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781BE2C95BB3400DE2FB9 /* dead.mp4 */; };
+		920781C92C95BB3500DE2FB9 /* play.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781BF2C95BB3400DE2FB9 /* play.mp4 */; };
+		920781CA2C95BB3500DE2FB9 /* eat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781C02C95BB3400DE2FB9 /* eat.mp4 */; };
+		920781CB2C95BB3500DE2FB9 /* hunt.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781C12C95BB3400DE2FB9 /* hunt.mp4 */; };
+		920781CC2C95BB3500DE2FB9 /* talk.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781C22C95BB3400DE2FB9 /* talk.mp4 */; };
+		920781CD2C95BB3500DE2FB9 /* evil.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 920781C32C95BB3400DE2FB9 /* evil.mp4 */; };
+		920781D02C95EB7A00DE2FB9 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 920781CF2C95EB7A00DE2FB9 /* ConfettiSwiftUI */; };
+		920781D22C96D73E00DE2FB9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920781D12C96D73E00DE2FB9 /* SettingsView.swift */; };
+		920781D42C9701C200DE2FB9 /* StatParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920781D32C9701C200DE2FB9 /* StatParameterView.swift */; };
+		922E39612C936B6B00AC4F6D /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E39602C936B6B00AC4F6D /* Animator.swift */; };
+		922E39632C937E5800AC4F6D /* Commands.json in Resources */ = {isa = PBXBuildFile; fileRef = 922E39622C937E5800AC4F6D /* Commands.json */; };
+		922E39662C9382D400AC4F6D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 922E39652C9382D400AC4F6D /* SwiftyJSON */; };
+		922E39682C9458A300AC4F6D /* Marketitems.json in Resources */ = {isa = PBXBuildFile; fileRef = 922E39672C9458A300AC4F6D /* Marketitems.json */; };
+		922E396A2C94599300AC4F6D /* MarketItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E39692C94599300AC4F6D /* MarketItemsController.swift */; };
+		922E396C2C948ABA00AC4F6D /* DateKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E396B2C948ABA00AC4F6D /* DateKeeper.swift */; };
 		9289B7082C8B41FF005ECB1A /* CatTamagochiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B7072C8B41FF005ECB1A /* CatTamagochiApp.swift */; };
-		9289B70A2C8B41FF005ECB1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B7092C8B41FF005ECB1A /* ContentView.swift */; };
-		9289B70C2C8B41FF005ECB1A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B70B2C8B41FF005ECB1A /* Item.swift */; };
+		9289B70A2C8B41FF005ECB1A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B7092C8B41FF005ECB1A /* GameView.swift */; };
 		9289B70E2C8B4201005ECB1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9289B70D2C8B4201005ECB1A /* Assets.xcassets */; };
 		9289B7112C8B4201005ECB1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9289B7102C8B4201005ECB1A /* Preview Assets.xcassets */; };
+		9289B7192C8B4575005ECB1A /* FastAppLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 9289B7182C8B4575005ECB1A /* FastAppLibrary */; };
+		9289B71E2C8B4844005ECB1A /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9289B71D2C8B4844005ECB1A /* ChatGPTSwift */; };
+		9289B7252C8C6E10005ECB1A /* PixelifySans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9289B7222C8C6BFC005ECB1A /* PixelifySans-SemiBold.ttf */; };
+		9289B7262C8C6E10005ECB1A /* PixelifySans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9289B7212C8C6BFC005ECB1A /* PixelifySans-Medium.ttf */; };
+		9289B7272C8C6E10005ECB1A /* PixelifySans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9289B7242C8C6BFC005ECB1A /* PixelifySans-Regular.ttf */; };
+		9289B7282C8C6E10005ECB1A /* PixelifySans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9289B7232C8C6BFC005ECB1A /* PixelifySans-Bold.ttf */; };
+		9289B72A2C8C7C67005ECB1A /* CatParametrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B7292C8C7C67005ECB1A /* CatParametrs.swift */; };
+		9289B72C2C8CAB9A005ECB1A /* CatMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B72B2C8CAB9A005ECB1A /* CatMarket.swift */; };
+		9289B72F2C8CB129005ECB1A /* TestCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B72E2C8CB129005ECB1A /* TestCommand.swift */; };
+		9289B7312C8CE2AC005ECB1A /* CatGPTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B7302C8CE2AC005ECB1A /* CatGPTService.swift */; };
+		9289B7332C8CE779005ECB1A /* GPTAPIKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9289B7322C8CE779005ECB1A /* GPTAPIKey.txt */; };
+		92B809802C8F037A002ACADA /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B8097F2C8F037A002ACADA /* SoundPlayerView.swift */; };
+		92B8098B2C8F04BF002ACADA /* tolk-0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809832C8F04BF002ACADA /* tolk-0.wav */; };
+		92B8098C2C8F04BF002ACADA /* tolk-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809842C8F04BF002ACADA /* tolk-1.wav */; };
+		92B8098D2C8F04BF002ACADA /* tolk-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809852C8F04BF002ACADA /* tolk-2.wav */; };
+		92B8098E2C8F04BF002ACADA /* tolk-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809862C8F04BF002ACADA /* tolk-3.wav */; };
+		92B8098F2C8F04BF002ACADA /* tolk-4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809872C8F04BF002ACADA /* tolk-4.wav */; };
+		92B809902C8F04BF002ACADA /* tolk-5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809882C8F04BF002ACADA /* tolk-5.wav */; };
+		92B809912C8F04BF002ACADA /* tolk-6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809892C8F04BF002ACADA /* tolk-6.wav */; };
+		92E5B1282C982C0A00E51EFA /* loading.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92E5B1272C982C0900E51EFA /* loading.mp4 */; };
+		92E5B12A2C983EEB00E51EFA /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5B1292C983EEB00E51EFA /* IntroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		920781BA2C95BB3300DE2FB9 /* idle.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = idle.mp4; sourceTree = "<group>"; };
+		920781BB2C95BB3300DE2FB9 /* medicine.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = medicine.mp4; sourceTree = "<group>"; };
+		920781BC2C95BB3400DE2FB9 /* engry.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = engry.mp4; sourceTree = "<group>"; };
+		920781BD2C95BB3400DE2FB9 /* happy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = happy.mp4; sourceTree = "<group>"; };
+		920781BE2C95BB3400DE2FB9 /* dead.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dead.mp4; sourceTree = "<group>"; };
+		920781BF2C95BB3400DE2FB9 /* play.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = play.mp4; sourceTree = "<group>"; };
+		920781C02C95BB3400DE2FB9 /* eat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = eat.mp4; sourceTree = "<group>"; };
+		920781C12C95BB3400DE2FB9 /* hunt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hunt.mp4; sourceTree = "<group>"; };
+		920781C22C95BB3400DE2FB9 /* talk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = talk.mp4; sourceTree = "<group>"; };
+		920781C32C95BB3400DE2FB9 /* evil.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evil.mp4; sourceTree = "<group>"; };
+		920781D12C96D73E00DE2FB9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		920781D32C9701C200DE2FB9 /* StatParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatParameterView.swift; sourceTree = "<group>"; };
+		922E39602C936B6B00AC4F6D /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		922E39622C937E5800AC4F6D /* Commands.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Commands.json; sourceTree = "<group>"; };
+		922E39672C9458A300AC4F6D /* Marketitems.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Marketitems.json; sourceTree = "<group>"; };
+		922E39692C94599300AC4F6D /* MarketItemsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItemsController.swift; sourceTree = "<group>"; };
+		922E396B2C948ABA00AC4F6D /* DateKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateKeeper.swift; sourceTree = "<group>"; };
 		9289B7042C8B41FF005ECB1A /* CatTamagochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatTamagochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9289B7072C8B41FF005ECB1A /* CatTamagochiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTamagochiApp.swift; sourceTree = "<group>"; };
-		9289B7092C8B41FF005ECB1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9289B70B2C8B41FF005ECB1A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9289B7092C8B41FF005ECB1A /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		9289B70D2C8B4201005ECB1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9289B7102C8B4201005ECB1A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9289B71F2C8B4F60005ECB1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9289B7212C8C6BFC005ECB1A /* PixelifySans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PixelifySans-Medium.ttf"; sourceTree = "<group>"; };
+		9289B7222C8C6BFC005ECB1A /* PixelifySans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PixelifySans-SemiBold.ttf"; sourceTree = "<group>"; };
+		9289B7232C8C6BFC005ECB1A /* PixelifySans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PixelifySans-Bold.ttf"; sourceTree = "<group>"; };
+		9289B7242C8C6BFC005ECB1A /* PixelifySans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PixelifySans-Regular.ttf"; sourceTree = "<group>"; };
+		9289B7292C8C7C67005ECB1A /* CatParametrs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatParametrs.swift; sourceTree = "<group>"; };
+		9289B72B2C8CAB9A005ECB1A /* CatMarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatMarket.swift; sourceTree = "<group>"; };
+		9289B72E2C8CB129005ECB1A /* TestCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCommand.swift; sourceTree = "<group>"; };
+		9289B7302C8CE2AC005ECB1A /* CatGPTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGPTService.swift; sourceTree = "<group>"; };
+		9289B7322C8CE779005ECB1A /* GPTAPIKey.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = GPTAPIKey.txt; sourceTree = "<group>"; };
+		92B8097F2C8F037A002ACADA /* SoundPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
+		92B809832C8F04BF002ACADA /* tolk-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-0.wav"; sourceTree = "<group>"; };
+		92B809842C8F04BF002ACADA /* tolk-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-1.wav"; sourceTree = "<group>"; };
+		92B809852C8F04BF002ACADA /* tolk-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-2.wav"; sourceTree = "<group>"; };
+		92B809862C8F04BF002ACADA /* tolk-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-3.wav"; sourceTree = "<group>"; };
+		92B809872C8F04BF002ACADA /* tolk-4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-4.wav"; sourceTree = "<group>"; };
+		92B809882C8F04BF002ACADA /* tolk-5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-5.wav"; sourceTree = "<group>"; };
+		92B809892C8F04BF002ACADA /* tolk-6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-6.wav"; sourceTree = "<group>"; };
+		92E5B1272C982C0900E51EFA /* loading.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loading.mp4; sourceTree = "<group>"; };
+		92E5B1292C983EEB00E51EFA /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922E39662C9382D400AC4F6D /* SwiftyJSON in Frameworks */,
+				9289B71E2C8B4844005ECB1A /* ChatGPTSwift in Frameworks */,
+				920781D02C95EB7A00DE2FB9 /* ConfettiSwiftUI in Frameworks */,
+				9289B7192C8B4575005ECB1A /* FastAppLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,11 +132,27 @@
 		9289B7062C8B41FF005ECB1A /* CatTamagochi */ = {
 			isa = PBXGroup;
 			children = (
-				9289B7072C8B41FF005ECB1A /* CatTamagochiApp.swift */,
-				9289B7092C8B41FF005ECB1A /* ContentView.swift */,
-				9289B70B2C8B41FF005ECB1A /* Item.swift */,
-				9289B70D2C8B4201005ECB1A /* Assets.xcassets */,
 				9289B70F2C8B4201005ECB1A /* Preview Content */,
+				92B809812C8F03B4002ACADA /* Assets */,
+				9289B72D2C8CB119005ECB1A /* Commands */,
+				9289B7202C8C6BCD005ECB1A /* Fonts */,
+				9289B71F2C8B4F60005ECB1A /* Info.plist */,
+				9289B70D2C8B4201005ECB1A /* Assets.xcassets */,
+				9289B7322C8CE779005ECB1A /* GPTAPIKey.txt */,
+				922E39622C937E5800AC4F6D /* Commands.json */,
+				922E39672C9458A300AC4F6D /* Marketitems.json */,
+				9289B7072C8B41FF005ECB1A /* CatTamagochiApp.swift */,
+				9289B7092C8B41FF005ECB1A /* GameView.swift */,
+				9289B7292C8C7C67005ECB1A /* CatParametrs.swift */,
+				9289B72B2C8CAB9A005ECB1A /* CatMarket.swift */,
+				9289B7302C8CE2AC005ECB1A /* CatGPTService.swift */,
+				92B8097F2C8F037A002ACADA /* SoundPlayerView.swift */,
+				922E39602C936B6B00AC4F6D /* Animator.swift */,
+				922E39692C94599300AC4F6D /* MarketItemsController.swift */,
+				922E396B2C948ABA00AC4F6D /* DateKeeper.swift */,
+				920781D12C96D73E00DE2FB9 /* SettingsView.swift */,
+				920781D32C9701C200DE2FB9 /* StatParameterView.swift */,
+				92E5B1292C983EEB00E51EFA /* IntroView.swift */,
 			);
 			path = CatTamagochi;
 			sourceTree = "<group>";
@@ -68,6 +163,74 @@
 				9289B7102C8B4201005ECB1A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9289B7202C8C6BCD005ECB1A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9289B7232C8C6BFC005ECB1A /* PixelifySans-Bold.ttf */,
+				9289B7212C8C6BFC005ECB1A /* PixelifySans-Medium.ttf */,
+				9289B7242C8C6BFC005ECB1A /* PixelifySans-Regular.ttf */,
+				9289B7222C8C6BFC005ECB1A /* PixelifySans-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9289B72D2C8CB119005ECB1A /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				9289B72E2C8CB129005ECB1A /* TestCommand.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		92B809772C8EBEF7002ACADA /* cat shader */ = {
+			isa = PBXGroup;
+			children = (
+				92E5B1272C982C0900E51EFA /* loading.mp4 */,
+				920781BE2C95BB3400DE2FB9 /* dead.mp4 */,
+				920781C02C95BB3400DE2FB9 /* eat.mp4 */,
+				920781BC2C95BB3400DE2FB9 /* engry.mp4 */,
+				920781C32C95BB3400DE2FB9 /* evil.mp4 */,
+				920781BD2C95BB3400DE2FB9 /* happy.mp4 */,
+				920781C12C95BB3400DE2FB9 /* hunt.mp4 */,
+				920781BA2C95BB3300DE2FB9 /* idle.mp4 */,
+				920781BB2C95BB3300DE2FB9 /* medicine.mp4 */,
+				920781BF2C95BB3400DE2FB9 /* play.mp4 */,
+				920781C22C95BB3400DE2FB9 /* talk.mp4 */,
+			);
+			path = "cat shader";
+			sourceTree = "<group>";
+		};
+		92B809812C8F03B4002ACADA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				92B809822C8F03C0002ACADA /* sounds */,
+				92B809772C8EBEF7002ACADA /* cat shader */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		92B809822C8F03C0002ACADA /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				92B8098A2C8F04BF002ACADA /* Tolk */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
+		92B8098A2C8F04BF002ACADA /* Tolk */ = {
+			isa = PBXGroup;
+			children = (
+				92B809832C8F04BF002ACADA /* tolk-0.wav */,
+				92B809842C8F04BF002ACADA /* tolk-1.wav */,
+				92B809852C8F04BF002ACADA /* tolk-2.wav */,
+				92B809862C8F04BF002ACADA /* tolk-3.wav */,
+				92B809872C8F04BF002ACADA /* tolk-4.wav */,
+				92B809882C8F04BF002ACADA /* tolk-5.wav */,
+				92B809892C8F04BF002ACADA /* tolk-6.wav */,
+			);
+			path = Tolk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +249,12 @@
 			dependencies = (
 			);
 			name = CatTamagochi;
+			packageProductDependencies = (
+				9289B7182C8B4575005ECB1A /* FastAppLibrary */,
+				9289B71D2C8B4844005ECB1A /* ChatGPTSwift */,
+				922E39652C9382D400AC4F6D /* SwiftyJSON */,
+				920781CF2C95EB7A00DE2FB9 /* ConfettiSwiftUI */,
+			);
 			productName = CatTamagochi;
 			productReference = 9289B7042C8B41FF005ECB1A /* CatTamagochi.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +283,12 @@
 				Base,
 			);
 			mainGroup = 9289B6FB2C8B41FF005ECB1A;
+			packageReferences = (
+				9289B7172C8B4575005ECB1A /* XCLocalSwiftPackageReference "../FastAppLibrary" */,
+				9289B71C2C8B4844005ECB1A /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
+				922E39642C9382D300AC4F6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				920781CE2C95EB7A00DE2FB9 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = 9289B7052C8B41FF005ECB1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,8 +303,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9289B7252C8C6E10005ECB1A /* PixelifySans-SemiBold.ttf in Resources */,
+				9289B7262C8C6E10005ECB1A /* PixelifySans-Medium.ttf in Resources */,
+				922E39632C937E5800AC4F6D /* Commands.json in Resources */,
+				92B809902C8F04BF002ACADA /* tolk-5.wav in Resources */,
+				920781C62C95BB3500DE2FB9 /* engry.mp4 in Resources */,
+				92B8098E2C8F04BF002ACADA /* tolk-3.wav in Resources */,
+				920781C72C95BB3500DE2FB9 /* happy.mp4 in Resources */,
+				920781C82C95BB3500DE2FB9 /* dead.mp4 in Resources */,
+				920781C52C95BB3500DE2FB9 /* medicine.mp4 in Resources */,
+				922E39682C9458A300AC4F6D /* Marketitems.json in Resources */,
+				920781C42C95BB3500DE2FB9 /* idle.mp4 in Resources */,
+				920781CD2C95BB3500DE2FB9 /* evil.mp4 in Resources */,
+				92B8098B2C8F04BF002ACADA /* tolk-0.wav in Resources */,
+				9289B7272C8C6E10005ECB1A /* PixelifySans-Regular.ttf in Resources */,
+				9289B7282C8C6E10005ECB1A /* PixelifySans-Bold.ttf in Resources */,
+				92E5B1282C982C0A00E51EFA /* loading.mp4 in Resources */,
+				92B8098C2C8F04BF002ACADA /* tolk-1.wav in Resources */,
 				9289B7112C8B4201005ECB1A /* Preview Assets.xcassets in Resources */,
+				92B8098F2C8F04BF002ACADA /* tolk-4.wav in Resources */,
+				920781C92C95BB3500DE2FB9 /* play.mp4 in Resources */,
+				920781CC2C95BB3500DE2FB9 /* talk.mp4 in Resources */,
+				92B809912C8F04BF002ACADA /* tolk-6.wav in Resources */,
 				9289B70E2C8B4201005ECB1A /* Assets.xcassets in Resources */,
+				9289B7332C8CE779005ECB1A /* GPTAPIKey.txt in Resources */,
+				92B8098D2C8F04BF002ACADA /* tolk-2.wav in Resources */,
+				920781CB2C95BB3500DE2FB9 /* hunt.mp4 in Resources */,
+				920781CA2C95BB3500DE2FB9 /* eat.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +340,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9289B70A2C8B41FF005ECB1A /* ContentView.swift in Sources */,
-				9289B70C2C8B41FF005ECB1A /* Item.swift in Sources */,
+				9289B72F2C8CB129005ECB1A /* TestCommand.swift in Sources */,
+				9289B72A2C8C7C67005ECB1A /* CatParametrs.swift in Sources */,
+				9289B7312C8CE2AC005ECB1A /* CatGPTService.swift in Sources */,
+				922E396A2C94599300AC4F6D /* MarketItemsController.swift in Sources */,
+				92E5B12A2C983EEB00E51EFA /* IntroView.swift in Sources */,
+				9289B70A2C8B41FF005ECB1A /* GameView.swift in Sources */,
+				922E39612C936B6B00AC4F6D /* Animator.swift in Sources */,
+				92B809802C8F037A002ACADA /* SoundPlayerView.swift in Sources */,
+				9289B72C2C8CAB9A005ECB1A /* CatMarket.swift in Sources */,
 				9289B7082C8B41FF005ECB1A /* CatTamagochiApp.swift in Sources */,
+				922E396C2C948ABA00AC4F6D /* DateKeeper.swift in Sources */,
+				920781D42C9701C200DE2FB9 /* StatParameterView.swift in Sources */,
+				920781D22C96D73E00DE2FB9 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +489,7 @@
 				DEVELOPMENT_TEAM = 87XM268947;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CatTamagochi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +519,7 @@
 				DEVELOPMENT_TEAM = 87XM268947;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CatTamagochi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -348,6 +560,62 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9289B7172C8B4575005ECB1A /* XCLocalSwiftPackageReference "../FastAppLibrary" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../FastAppLibrary;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		920781CE2C95EB7A00DE2FB9 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		922E39642C9382D300AC4F6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		9289B71C2C8B4844005ECB1A /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/ChatGPTSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		920781CF2C95EB7A00DE2FB9 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 920781CE2C95EB7A00DE2FB9 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+		922E39652C9382D400AC4F6D /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 922E39642C9382D300AC4F6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		9289B7182C8B4575005ECB1A /* FastAppLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FastAppLibrary;
+		};
+		9289B71D2C8B4844005ECB1A /* ChatGPTSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9289B71C2C8B4844005ECB1A /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
+			productName = ChatGPTSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9289B6FC2C8B41FF005ECB1A /* Project object */;
 }

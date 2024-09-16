@@ -1,0 +1,79 @@
+[
+  {
+    "id": "t1_scr_pst1",
+    "itemName": "Практичность на улицах",
+    "description": "Рециклированные материалы, долговечность.",
+    "image": "scratchingPost-13",
+    "price": 100
+  },
+  {
+    "id": "t1_scr_pst2",
+    "itemName": "Классика для Кота",
+    "description": "Простая, удобная, надежная.",
+    "image": "scratchingPost-2",
+    "price": 200
+  },
+  {
+    "id": "t1_scr_pst3",
+    "itemName": "Космическая Одиссея",
+    "description": "Инновационные материалы, футуристичный дизайн.",
+    "image": "scratchingPost-3",
+    "price": 300
+  },
+  {
+    "id": "t1_scr_pst4",
+    "itemName": "Галактический Мир",
+    "description": "Нестандартная форма, загадочная.",
+    "image": "scratchingPost-4",
+    "price": 400
+  },
+  {
+    "id": "t1_scr_pst5",
+    "itemName": "Робо-Когти",
+    "description": "Механическая сборка, автоматизация.",
+    "image": "scratchingPost-5",
+    "price": 500
+  },
+  {
+    "id": "t1_scr_pst6",
+    "itemName": "Кристаллические Сны",
+    "description": "Сверкающие кристаллы, роскошь.",
+    "image": "scratchingPost-6",
+    "price": 600
+  },
+  {
+    "id": "t1_scr_pst7",
+    "itemName": "Световой Фантом",
+    "description": "Голографические эффекты, эфемерность.",
+    "image": "scratchingPost-7",
+    "price": 700
+  },
+  {
+    "id": "t1_scr_pst8",
+    "itemName": "Римские Руины",
+    "description": "Колонны, мрамор, величие.",
+    "image": "scratchingPost-9",
+    "price": 800
+  },
+  {
+    "id": "t1_scr_pst9",
+    "itemName": "Желейный Пузырь",
+    "description": "Мягкость, прозрачность, необычность.",
+    "image": "scratchingPost-11",
+    "price": 900
+  },
+  {
+    "id": "t1_scr_pst10",
+    "itemName": "Волшебный Перстень",
+    "description": "Загадочная, энергетика, стиль.",
+    "image": "scratchingPost-12",
+    "price": 1000
+  },
+  {
+    "id": "t1_scr_pst11",
+    "itemName": "Темные Ритуалы",
+    "description": "Готика, мистика, символика.",
+    "image": "scratchingPost-1",
+    "price": 1100
+  }
+]

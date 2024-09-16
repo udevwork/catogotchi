@@ -1,0 +1,178 @@
+[
+  {
+    "commandName": "play",
+    "description": "To scratch the cat a little",
+    "requirements": [
+      {
+        "parameter": "HealthLevel",
+        "relation": "more",
+        "value": 1.5
+      }
+    ],
+    "influence": [
+      {
+        "parameter": "HealthLevel",
+        "value": 0.5,
+        "animation": "happy",
+        "sound": "play.wav"
+      },
+      {
+        "parameter": "EnergyLevel",
+        "value": -5.0
+      }
+    ]
+  },
+  {
+    "commandName": "play with ball",
+    "description": "Give a ball to cat",
+    "requirements": [
+      {
+        "parameter": "HealthLevel",
+        "relation": "more",
+        "value": 1.5
+      }
+    ],
+    "influence": [
+      {
+        "parameter": "HealthLevel",
+        "value": 0.7,
+        "animation": "play",
+        "sound": "play.wav"
+      },
+      {
+        "parameter": "EnergyLevel",
+        "value": -7.0
+      }
+    ]
+  },
+  {
+    "commandName": "hit",
+    "description": "Рunch the cat in the face",
+    "requirements": [],
+    "influence": [
+      {
+        "parameter": "HealthLevel",
+        "value": -5.5,
+        "animation": "engry",
+        "sound": "engry.wav"
+      }
+    ]
+  },
+  {
+    "commandName": "sharp",
+    "description": "Sharpening the claws of a cat",
+    "requirements": [
+      {
+        "parameter": "HealthLevel",
+        "relation": "more",
+        "value": 1.5
+      },
+      {
+        "parameter": "EnergyLevel",
+        "relation": "more",
+        "value": 10.0
+      }
+    ],
+    "presence": [
+      "t1_scr_pst1"
+    ],
+    "influence": [
+      {
+        "parameter": "HealthLevel",
+        "value": 1.5
+      },
+      {
+        "parameter": "EnergyLevel",
+        "value": -7.0
+      }
+    ]
+  },
+  {
+    "commandName": "feed",
+    "description": "To feed not very tasty food",
+    "requirements": [],
+    "presence": [],
+    "influence": [
+      {
+        "parameter": "HealthLevel",
+        "value": 1.5,
+        "animation": "eat",
+        "sound": "play.wav"
+      },
+      {
+        "parameter": "EnergyLevel",
+        "value": -7.0
+      },
+      {
+        "parameter": "HungerLevel",
+        "value": -4.0
+      }
+    ]
+  },
+  {
+    "commandName": "beatle",
+    "description": "A bug flies in through the window",
+    "requirements": [],
+    "presence": [],
+    "influence": [
+      {
+        "parameter": "DesireToPlayLevel",
+        "value": -5.5,
+        "animation": "hunt",
+        "sound": "play.wav"
+      },
+      {
+        "parameter": "EnergyLevel",
+        "value": -7.0
+      },
+      {
+        "parameter": "TrainingLevel",
+        "value": 2.0
+      }
+    ]
+  },
+  {
+    "commandName": "vaccine",
+    "description": "To give an injection with an untested and cheap vaccine",
+    "requirements": [],
+    "presence": [],
+    "influence": [
+      {
+        "parameter": "MoodLevel",
+        "value": -20.5,
+        "animation": "medicine",
+        "sound": "play.wav"
+      },
+      {
+        "parameter": "EnergyLevel",
+        "value": -7.0
+      },
+      {
+        "parameter": "FriendlinessLevel",
+        "value": -10.0
+      }
+    ]
+  },
+  {
+    "commandName": "promise to buy toys",
+    "description": "To promise to buy toys, but not to fulfill the promise",
+    "requirements": [],
+    "presence": [],
+    "influence": [
+      {
+        "parameter": "MoodLevel",
+        "value": 10.5,
+        "animation": "happy",
+        "sound": "play.wav"
+      },
+      {
+        "parameter": "EnergyLevel",
+        "value": -7.0
+      },
+      {
+        "parameter": "FriendlinessLevel",
+        "value": 3.0
+      }
+    ]
+  }
+]

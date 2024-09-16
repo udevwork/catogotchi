@@ -10,23 +10,26 @@ import SwiftData
 
 @main
 struct CatTamagochiApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    
+    @Environment(\.scenePhase) var scenePhase
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GameView().preferredColorScheme(.light)
+        }.onChange(of: scenePhase) { newPhase in
+            switch newPhase {
+            case .background:
+                // Когда приложение уходит в фон, сохраняем текущую дату
+                DateKeeper.saveCurrentDate()
+                print("Приложение ушло в фон. Дата сохранена.")
+            case .active:
+                    print("Приложение снова активно.", DateKeeper.getSecondsDifference())
+                // Логика при возвращении в активное состояние
+            case .inactive:
+                print("Приложение неактивно.")
+            default:
+                break
+            }
         }
-        .modelContainer(sharedModelContainer)
     }
 }
