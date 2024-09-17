@@ -74,7 +74,8 @@ class CatGPTService {
         let lastOwnerActions = """
         Сгенерируй которкую кошачью мысль в одно предложение на тему "Что я думаю о моем хозяне?"
         Вот список последних действий которые хозяин к тебе применял:
-        \(parametrs.getAlllastOwnerActions())
+        [ \(parametrs.getAlllastOwnerActions()) ]
+        Если список пустой - просто расскажи кошачью шутку
         """
         
         let joke = """

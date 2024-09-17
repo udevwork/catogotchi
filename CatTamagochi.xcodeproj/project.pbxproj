@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		920781D02C95EB7A00DE2FB9 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 920781CF2C95EB7A00DE2FB9 /* ConfettiSwiftUI */; };
 		920781D22C96D73E00DE2FB9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920781D12C96D73E00DE2FB9 /* SettingsView.swift */; };
 		920781D42C9701C200DE2FB9 /* StatParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920781D32C9701C200DE2FB9 /* StatParameterView.swift */; };
+		92125ADF2C99985900C8B0D2 /* FastAppLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 92125ADE2C99985900C8B0D2 /* FastAppLibrary */; };
 		922E39612C936B6B00AC4F6D /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E39602C936B6B00AC4F6D /* Animator.swift */; };
 		922E39632C937E5800AC4F6D /* Commands.json in Resources */ = {isa = PBXBuildFile; fileRef = 922E39622C937E5800AC4F6D /* Commands.json */; };
 		922E39662C9382D400AC4F6D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 922E39652C9382D400AC4F6D /* SwiftyJSON */; };
@@ -106,6 +107,7 @@
 				922E39662C9382D400AC4F6D /* SwiftyJSON in Frameworks */,
 				9289B71E2C8B4844005ECB1A /* ChatGPTSwift in Frameworks */,
 				920781D02C95EB7A00DE2FB9 /* ConfettiSwiftUI in Frameworks */,
+				92125ADF2C99985900C8B0D2 /* FastAppLibrary in Frameworks */,
 				9289B7192C8B4575005ECB1A /* FastAppLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,7 +186,7 @@
 			path = Commands;
 			sourceTree = "<group>";
 		};
-		92B809772C8EBEF7002ACADA /* cat shader */ = {
+		92B809772C8EBEF7002ACADA /* catAnimations */ = {
 			isa = PBXGroup;
 			children = (
 				92E5B1272C982C0900E51EFA /* loading.mp4 */,
@@ -199,14 +201,14 @@
 				920781BF2C95BB3400DE2FB9 /* play.mp4 */,
 				920781C22C95BB3400DE2FB9 /* talk.mp4 */,
 			);
-			path = "cat shader";
+			path = catAnimations;
 			sourceTree = "<group>";
 		};
 		92B809812C8F03B4002ACADA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				92B809822C8F03C0002ACADA /* sounds */,
-				92B809772C8EBEF7002ACADA /* cat shader */,
+				92B809772C8EBEF7002ACADA /* catAnimations */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -254,6 +256,7 @@
 				9289B71D2C8B4844005ECB1A /* ChatGPTSwift */,
 				922E39652C9382D400AC4F6D /* SwiftyJSON */,
 				920781CF2C95EB7A00DE2FB9 /* ConfettiSwiftUI */,
+				92125ADE2C99985900C8B0D2 /* FastAppLibrary */,
 			);
 			productName = CatTamagochi;
 			productReference = 9289B7042C8B41FF005ECB1A /* CatTamagochi.app */;
@@ -284,10 +287,10 @@
 			);
 			mainGroup = 9289B6FB2C8B41FF005ECB1A;
 			packageReferences = (
-				9289B7172C8B4575005ECB1A /* XCLocalSwiftPackageReference "../FastAppLibrary" */,
 				9289B71C2C8B4844005ECB1A /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
 				922E39642C9382D300AC4F6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				920781CE2C95EB7A00DE2FB9 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				92125ADD2C99985900C8B0D2 /* XCRemoteSwiftPackageReference "FastApp" */,
 			);
 			productRefGroup = 9289B7052C8B41FF005ECB1A /* Products */;
 			projectDirPath = "";
@@ -561,13 +564,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		9289B7172C8B4575005ECB1A /* XCLocalSwiftPackageReference "../FastAppLibrary" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../FastAppLibrary;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		920781CE2C95EB7A00DE2FB9 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -575,6 +571,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.1.0;
+			};
+		};
+		92125ADD2C99985900C8B0D2 /* XCRemoteSwiftPackageReference "FastApp" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/udevwork/FastApp";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 		922E39642C9382D300AC4F6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
@@ -600,6 +604,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 920781CE2C95EB7A00DE2FB9 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
+		};
+		92125ADE2C99985900C8B0D2 /* FastAppLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92125ADD2C99985900C8B0D2 /* XCRemoteSwiftPackageReference "FastApp" */;
+			productName = FastAppLibrary;
 		};
 		922E39652C9382D400AC4F6D /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;

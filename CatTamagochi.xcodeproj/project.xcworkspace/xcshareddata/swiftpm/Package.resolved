@@ -1,5 +1,5 @@
 {
-  "originHash" : "df026e608aba50f0040693b4a634223d9b3e1b4747dcb3e845dd26f1a7acb6fc",
+  "originHash" : "f5d639a9b3a5b672caab3bdad6a7c08e7a19f27e9050fddb8be18a8dff8d360c",
   "pins" : [
     {
       "identity" : "alerttoast",
@@ -38,6 +38,15 @@
       }
     },
     {
+      "identity" : "fastapp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/udevwork/FastApp",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1c5a487b8fa23cb20d80f88fcf065fa250fb280f"
+      }
+    },
+    {
       "identity" : "foil",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jessesquires/Foil.git",
@@ -69,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RevenueCat/purchases-ios-spm.git",
       "state" : {
-        "revision" : "1085af5662b47167c23bfa10ace372342c79452f",
-        "version" : "5.3.2"
+        "revision" : "dabbf506344b6f924b44bdfabbaec96bc7943d5d",
+        "version" : "5.3.3"
       }
     },
     {
