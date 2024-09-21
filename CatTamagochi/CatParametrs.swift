@@ -36,7 +36,6 @@ class CatParameters: ObservableObject {
         "CleanlinessLevel": 70,
         "DesireToPlayLevel": 60,
         "MoodLevel": 50,
-        "SleepinessLevel": 40,
         "FriendlinessLevel": 65,
         "FeelingOfSafetyLevel": 90,
         "TrainingLevel": 40,
@@ -191,7 +190,6 @@ class CatParameters: ObservableObject {
             "CleanlinessLevel": 70,
             "DesireToPlayLevel": 60,
             "MoodLevel": 50,
-            "SleepinessLevel": 40,
             "FriendlinessLevel": 65,
             "FeelingOfSafetyLevel": 90,
             "TrainingLevel": 40,
@@ -207,22 +205,21 @@ class CatParameters: ObservableObject {
     
     var allCases: [(String, Double?)] {
         return [
-            ("Уровень здоровья", parameters["HealthLevel"]),
-            ("Уровень голода", parameters["HungerLevel"]),
-            ("Уровень жажды", parameters["ThirstLevel"]),
-            ("Уровень энергии", parameters["EnergyLevel"]),
-            ("Уровень чистоты", parameters["CleanlinessLevel"]),
-            ("Желание играть", parameters["DesireToPlayLevel"]),
-            ("Настроение", parameters["MoodLevel"]),
-            ("Уровень сонливости", parameters["SleepinessLevel"]),
-            ("Дружелюбие", parameters["FriendlinessLevel"]),
-            ("Чувство безопасности", parameters["FeelingOfSafetyLevel"]),
-            ("Уровень тренировки", parameters["TrainingLevel"]),
-            ("Ловкость", parameters["AgilityLevel"]),
-            ("Интеллект", parameters["IntelligenceLevel"]),
-            ("Уровень гигиены", parameters["HygieneLevel"]),
-            ("Уровень страха", parameters["FearLevel"]),
-            ("Потребность в общении", parameters["NeedForCommunicationLevel"])
+            ("Health Level", parameters["HealthLevel"]),
+            ("Hunger Level", parameters["HungerLevel"]),
+            ("Thirst Level", parameters["ThirstLevel"]),
+            ("Energy Level", parameters["EnergyLevel"]),
+            ("Cleanliness Level", parameters["CleanlinessLevel"]),
+            ("Desire to Play", parameters["DesireToPlayLevel"]),
+            ("Mood", parameters["MoodLevel"]),
+            ("Friendliness", parameters["FriendlinessLevel"]),
+            ("Feeling of Safety", parameters["FeelingOfSafetyLevel"]),
+            ("Training Level", parameters["TrainingLevel"]),
+            ("Agility", parameters["AgilityLevel"]),
+            ("Intelligence", parameters["IntelligenceLevel"]),
+            ("Hygiene Level", parameters["HygieneLevel"]),
+            ("Fear Level", parameters["FearLevel"]),
+            ("Need for Communication", parameters["NeedForCommunicationLevel"])
         ]
     }
 }
@@ -230,22 +227,21 @@ class CatParameters: ObservableObject {
 extension CatParameters {
     func formattedDescription() -> String {
         return """
-          Уровень здоровья - \(parameters["HealthLevel"] ?? 0)
-          Уровень голода - \(parameters["HungerLevel"] ?? 0)
-          Уровень жажды - \(parameters["ThirstLevel"] ?? 0)
-          Уровень энергии - \(parameters["EnergyLevel"] ?? 0)
-          Уровень чистоты - \(parameters["CleanlinessLevel"] ?? 0)
-          Желание играть - \(parameters["DesireToPlayLevel"] ?? 0)
-          Настроение - \(parameters["MoodLevel"] ?? 0)
-          Уровень сонливости - \(parameters["SleepinessLevel"] ?? 0)
-          Дружелюбие - \(parameters["FriendlinessLevel"] ?? 0)
-          Чувство безопасности - \(parameters["FeelingOfSafetyLevel"] ?? 0)
-          Уровень тренировки - \(parameters["TrainingLevel"] ?? 0)
-          Ловкость - \(parameters["AgilityLevel"] ?? 0)
-          Интеллект - \(parameters["IntelligenceLevel"] ?? 0)
-          Уровень гигиены - \(parameters["HygieneLevel"] ?? 0)
-          Уровень страха - \(parameters["FearLevel"] ?? 0)
-          Потребность в общении - \(parameters["NeedForCommunicationLevel"] ?? 0)
+          Health Level - \(parameters["HealthLevel"] ?? 0)
+          Hunger Level - \(parameters["HungerLevel"] ?? 0)
+          Thirst Level - \(parameters["ThirstLevel"] ?? 0)
+          Energy Level - \(parameters["EnergyLevel"] ?? 0)
+          Cleanliness Level - \(parameters["CleanlinessLevel"] ?? 0)
+          Desire to Play - \(parameters["DesireToPlayLevel"] ?? 0)
+          Mood - \(parameters["MoodLevel"] ?? 0)
+          Friendliness - \(parameters["FriendlinessLevel"] ?? 0)
+          Feeling of Safety - \(parameters["FeelingOfSafetyLevel"] ?? 0)
+          Training Level - \(parameters["TrainingLevel"] ?? 0)
+          Agility - \(parameters["AgilityLevel"] ?? 0)
+          Intelligence - \(parameters["IntelligenceLevel"] ?? 0)
+          Hygiene Level - \(parameters["HygieneLevel"] ?? 0)
+          Fear Level - \(parameters["FearLevel"] ?? 0)
+          Need for Communication - \(parameters["NeedForCommunicationLevel"] ?? 0)
           """
     }
 }

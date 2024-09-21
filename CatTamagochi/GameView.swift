@@ -67,14 +67,13 @@ class GameViewController: ObservableObject {
         
         if let secondsSinceLastEnter = DateKeeper.getSecondsDifference() {
             // 20 в релизе должно пойти
-            CatParameters.shared[Stat.id("HealthLevel")] -= (secondsSinceLastEnter/5).rounded()
+           
             CatParameters.shared[Stat.id("HungerLevel")] += (secondsSinceLastEnter/5).rounded()
             CatParameters.shared[Stat.id("ThirstLevel")] += (secondsSinceLastEnter/5).rounded() // жажда
             CatParameters.shared[Stat.id("EnergyLevel")] += (secondsSinceLastEnter/5).rounded() // енергия всегда увеличивается со врменем
             CatParameters.shared[Stat.id("CleanlinessLevel")] -= (secondsSinceLastEnter/5).rounded()
             CatParameters.shared[Stat.id("DesireToPlayLevel")] += (secondsSinceLastEnter/5).rounded()
             CatParameters.shared[Stat.id("MoodLevel")] -= (secondsSinceLastEnter/5).rounded()
-            CatParameters.shared[Stat.id("SleepinessLevel")] += (secondsSinceLastEnter/5).rounded()
             CatParameters.shared[Stat.id("FriendlinessLevel")] -= (secondsSinceLastEnter/5).rounded()
             CatParameters.shared[Stat.id("FeelingOfSafetyLevel")] -= (secondsSinceLastEnter/5).rounded()
             CatParameters.shared[Stat.id("TrainingLevel")] -= (secondsSinceLastEnter/5).rounded()
@@ -84,9 +83,16 @@ class GameViewController: ObservableObject {
             CatParameters.shared[Stat.id("FearLevel")] += (secondsSinceLastEnter/5).rounded()
             CatParameters.shared[Stat.id("ComfortLevel")] -= (secondsSinceLastEnter/5).rounded()
             CatParameters.shared[Stat.id("NeedForCommunicationLevel")] += (secondsSinceLastEnter/5).rounded()
+            
+            if CatParameters.shared[Stat.id("HungerLevel")] >= 100 &&
+                CatParameters.shared[Stat.id("ThirstLevel")] >= 100 {
+                CatParameters.shared[Stat.id("HealthLevel")] -= (secondsSinceLastEnter/5).rounded()
+            }
+            
+            if CatParameters.shared[Stat.id("CleanlinessLevel")] <= 0 {
+                CatParameters.shared[Stat.id("HealthLevel")] -= (secondsSinceLastEnter/10).rounded()
+            }
         }
-        
-        
     }
     
     // Запрос на получение случайной кошачьей мысли
@@ -225,6 +231,9 @@ class GameViewController: ObservableObject {
       
     }
     
+    func reloadConsoleDatabaseFile() {
+        commandsManager.load()
+    }
     
 }
 
@@ -263,9 +272,7 @@ struct GameView: View {
                                     .clipShape(RoundedRectangle(cornerRadius: 20))
                                     
                                     HStack {
-                                        
                                         Text("\(Int(model.catBirthDayDiff)) years").bold()
-                                        
                                     }
                                     .foregroundStyle(.white)
                                     .padding(.horizontal,12)
@@ -362,9 +369,9 @@ struct GameView: View {
                                     inputCommandPressed = false
                                 }
                             }
-                        
                     })
                     .blur(radius: inputCommandPressed ? 15 : 0)
+                
                     if params.isCatDead == false {
                         VStack {
                             if inputCommandPressed == true {
@@ -384,14 +391,11 @@ struct GameView: View {
                                         })
                                         .textInputAutocapitalization(.never)
                                         
-                                        
-                                        
                                         VStack(alignment: .leading, spacing: 8) {
                                             Text("Suggestions:")
                                                 .foregroundStyle(.gray)
                                                 .font(.footnote)
                                                 .bold()
-                                            
                                             
                                             ForEach(model.inputSuggestion, id: \.commandName) { cmd in
                                                 Button(action: {
@@ -415,26 +419,46 @@ struct GameView: View {
                                     .shadow(color: .gray, radius: 20, x: 15, y: 0)
                                     .padding()
                                 }.transition(.slide)
-                                
+                                Button {
+                                    model.reloadConsoleDatabaseFile()
+                                } label: {
+                                    Text("reload console")
+                                }
+
                             }
                             Spacer()
                             if inputCommandPressed == false {
                                 ZStack(alignment: .leading) {
                                     HStack {
-                                        NavigationLink {
-                                            SettingsView()
-                                        } label: {
-                                            HStack {
-                                                Image(systemName: "gearshape.fill")
-                                                Text("Settings")
-                                                
-                                            }
-                                        }
                                         
-                                        .padding()
-                                        .background(Color.systemBackground )
-                                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                                        .shadow(color: .black.opacity(0.2), radius: 20, x: 10, y: 10)
+                                        if !FastApp.subscriptions.isSubscribed {
+                                            NavigationLink {
+                                                SettingsView()
+                                            } label: {
+                                                HStack {
+                                                    Image(systemName: "gearshape.fill")
+                                                    Text("Editor")
+                                                }
+                                            }
+                                            .padding()
+                                            .background(Color.systemBackground )
+                                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                                            .shadow(color: .black.opacity(0.2), radius: 20, x: 10, y: 10)
+                                        } else {
+                                            Button {
+                                                FastApp.subscriptions.showPaywallScreen()
+                                            } label: {
+                                                HStack {
+                                                    Image(systemName: "gearshape.fill")
+                                                    Text("Editor")
+                                                    
+                                                } .padding()
+                                                    .background(Color.systemBackground )
+                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                                                    .shadow(color: .black.opacity(0.2), radius: 20, x: 10, y: 10)
+                                            }
+
+                                        }
                                         
                                         HStack {
                                             Image(systemName: "cart.fill")
@@ -475,6 +499,7 @@ struct GameView: View {
                     }
               
             }
+            .background(.screenBack)
             .onChange(of: inputCommandFocused, {
                 if inputCommandFocused == false {
                     withAnimation {
@@ -484,14 +509,19 @@ struct GameView: View {
             })
             .sheet(isPresented: $openMarket, content: {
                 CatMarket(gamecontroller: model)
+                    .presentationDetents([.height(420)])
+                    .presentationBackground(content: {
+                        Color.screenBack
+                    })
+                    .presentationDragIndicator(.visible)
+                    
             })
-            
+       
             .fullScreenCover(isPresented: $model.needToCreateCat, content: {
                 IntroView(model: model)
             })
-            .navigationTitle("Catagothci")
-            .background(.screenBack)
-        } .fontDesign(.monospaced)
+          
+        }.fontDesign(.monospaced)
         
     }
 }

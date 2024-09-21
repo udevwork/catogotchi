@@ -4,5 +4,9 @@
 <dict>
 	<key>NSAllowsArbitraryLoads</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PixelifySans-Bold.ttf</string>
+	</array>
 </dict>
 </plist>

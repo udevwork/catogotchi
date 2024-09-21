@@ -90,7 +90,7 @@ class CatGPTService {
         }
         
         api.replaceHistoryList(with: [])
-        let stream = try await api.sendMessage(text: promt, systemText: "ты - тамагочи кот в игре.", temperature: 1.0)
+        let stream = try await api.sendMessage(text: promt, systemText: "ты - тамагочи кот в игре. ОТВЕЧАЙ ТОЛЬКО НА АНГЛИЙСКОМ ЯЗЫКЕ", temperature: 1.0)
         return stream
     }
         
@@ -111,7 +111,7 @@ class CatGPTService {
         }
         
         api.replaceHistoryList(with: [])
-        let stream = try await api.sendMessage(text: prompt, systemText: "ты - тамагочи кот в игре.", temperature: 1.0)
+        let stream = try await api.sendMessage(text: prompt, systemText: "ты - тамагочи кот в игре. ОТВЕЧАЙ ТОЛЬКО НА АНГЛИЙСКОМ ЯЗЫКЕ", temperature: 1.0)
         
         return stream
         

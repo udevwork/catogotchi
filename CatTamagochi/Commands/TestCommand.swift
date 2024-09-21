@@ -10,16 +10,54 @@ import SwiftyJSON
 
 class CommandsManager {
     
-    let json: JSON
+    var json: JSON!
     let gameController: GameViewController
     
     init(gameController: GameViewController) {
         
         self.gameController = gameController
         
-        let path = Bundle.main.path(forResource: "Commands", ofType: "json")
-        let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
-        json = try! JSON(data: data)
+        load()
+    }
+    
+    func load() {
+        do {
+            let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+            if let filePath = dir?.appendingPathComponent("Commands.json") {
+                let data = try Data(contentsOf: filePath)
+                json = try JSON(data: data)
+            } else {
+                let path = Bundle.main.path(forResource: "Commands", ofType: "json")
+                let data = try Data(contentsOf: URL(fileURLWithPath: path!))
+                json = try JSON(data: data)
+            }
+        } catch {
+            let path = Bundle.main.path(forResource: "Commands", ofType: "json")
+            let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
+            json = try! JSON(data: data)
+        }
+    }
+    
+    // Функция для чтения кастомных данных из файла и декодирования их из JSON
+    func loadSuggestionsFromFile() -> [Command]? {
+        do {
+            // Получение пути к документам пользователя
+            let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+            if let filePath = dir?.appendingPathComponent("Commands.json") {
+                // Чтение данных из файла
+                let data = try Data(contentsOf: filePath)
+                
+                // Преобразование JSON данных обратно в массив строк (или любую другую нужную вам структуру)
+                let suggestions = try JSONDecoder().decode([Command].self, from: data)
+                
+                // Возвращение прочитанных данных
+                return suggestions
+            }
+        } catch let error {
+            print("Error loading data: \(error.localizedDescription)")
+        }
+        
+        return nil
     }
     
     func findCommandSuggestion(name: String) -> [Command] {
@@ -32,13 +70,13 @@ class CommandsManager {
                     
                     // генерируем в описании подсказку с влиянием
                     var influencesDescription: String = ""
-                    if let influences = cmd.influence {
-                        influences.forEach {
+        
+                        cmd.influence.forEach {
                             if let parameter = $0.parameter, let value = $0.value {
                                 influencesDescription +=  "\n\(parameter): \(value)"
                             }
                         }
-                    }
+                    
                     cmd.description? += influencesDescription
                     suggestion.append(cmd)
                     // Проверяем, достиг ли массив 5 элементов
@@ -83,14 +121,14 @@ class CommandsManager {
         
         // Наличие предмета
         var allItemsIsPresence: Bool = true
-        if let presence = cmd.presence {
-            for itemID in presence {
-                allItemsIsPresence = CatParameters.shared.itemOwnership[itemID] != nil
-                if allItemsIsPresence == false {
-                    break
-                }
+        
+        for itemID in cmd.presence {
+            allItemsIsPresence = CatParameters.shared.itemOwnership[itemID] != nil
+            if allItemsIsPresence == false {
+                break
             }
         }
+        
         
         if allItemsIsPresence == false {
             print("Нет нужного предмета для выполнения команды")
@@ -102,8 +140,8 @@ class CommandsManager {
         // Требования к исполению команды
         var requirementsMet: Bool = true
         var requirementsErrorReason: String = ""
-        if let requirements = cmd.requirements {
-            for req in requirements {
+      
+        for req in cmd.requirements {
                 if let parameter = req.parameter, let value = req.value, let relation = req.relation {
                     requirementsErrorReason = "\(parameter) mast be \(relation) than \(value)"
                     let valToCheck = CatParameters.shared[Stat.id(parameter)]
@@ -121,7 +159,7 @@ class CommandsManager {
                     }
                 }
             }
-        }
+        
         
         if requirementsMet == false {
             print("Не соблюдены требования для исполнения команды")
@@ -133,10 +171,10 @@ class CommandsManager {
         
         
         // Влияние
-        if let influences = cmd.influence {
-            influences.forEach {
+
+        cmd.influence.forEach {
                 
-                if let animation = $0.animation {
+                if let animation = $0.animationName {
                     gameController.animator.play(Animator.CatAnimations(rawValue: animation) ?? .idle)
                 }
                 
@@ -155,7 +193,7 @@ class CommandsManager {
                     }
                 }
             }
-        }
+        
         
         // GPT запрос
         if let descr = cmd.description {
@@ -171,36 +209,36 @@ class CommandsManager {
 }
 
 // MARK: - Command
-struct Command: Codable {
-    let commandName: String?
+struct Command: Codable, Hashable {
+    var commandName: String?
     var description: String?
-    let requirements: [Requirement]?
-    let influence: [Influence]?
-    let presence: [String]?
+    var requirements: [Requirement] = []
+    var influence: [Influence] = []
+    var presence: [String]
     
     init(commandName: String? = nil, description: String? = nil, requirements: [Requirement]? = nil, influence: [Influence]? = nil, presence: [String]? = nil) {
         self.commandName = commandName
         self.description = description
-        self.requirements = requirements
-        self.influence = influence
-        self.presence = presence
+        self.requirements = requirements ?? []
+        self.influence = influence ?? []
+        self.presence = presence ?? []
     }
 
 }
 
 // MARK: - Influence
-struct Influence: Codable {
-    let parameter: String?
-    let value: Double?
-    let animation: String?
-    let sound: String?
+struct Influence: Codable, Hashable {
+    var parameter: String?
+    var value: Double?
+    var animationName: String?
+    var sound: String?
 }
 
 // MARK: - Requirement
-struct Requirement: Codable {
-    let parameter: String?
-    let relation: String?
-    let value: Double?
+struct Requirement: Codable, Hashable {
+    var parameter: String?
+    var relation: String?
+    var value: Double?
 }
 
 struct ExecutableCommand {

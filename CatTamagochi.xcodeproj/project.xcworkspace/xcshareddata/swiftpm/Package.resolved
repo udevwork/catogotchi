@@ -1,5 +1,5 @@
 {
-  "originHash" : "f5d639a9b3a5b672caab3bdad6a7c08e7a19f27e9050fddb8be18a8dff8d360c",
+  "originHash" : "39609e3092b326db01ed28a392fc421a538d8291644b7fbc056991e0b0bb5b5c",
   "pins" : [
     {
       "identity" : "alerttoast",
@@ -53,6 +53,15 @@
       "state" : {
         "revision" : "ff4b49d2e7852f876ded552fb596e510a66670b9",
         "version" : "5.1.2"
+      }
+    },
+    {
+      "identity" : "glur",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/joogps/Glur",
+      "state" : {
+        "revision" : "9e00ff79da318f2c78b749b1027e54a9d4de2e33",
+        "version" : "1.0.4"
       }
     },
     {
@@ -224,6 +233,15 @@
       "state" : {
         "revision" : "d2ba781702a1d8285419c15ee62fd734a9437ff5",
         "version" : "1.3.2"
+      }
+    },
+    {
+      "identity" : "swiftui-tooltip",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/quassum/SwiftUI-Tooltip",
+      "state" : {
+        "revision" : "3bef9a21e2bcf1d0f078ddf6731c3c8996f32c3e",
+        "version" : "1.4.0"
       }
     },
     {

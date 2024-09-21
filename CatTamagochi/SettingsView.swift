@@ -14,6 +14,14 @@ struct SettingsView: View {
     
     var body: some View {
         List {
+            
+            NavigationLink {
+                ItemsEditor()
+            } label: {
+                Text("Item Editor").bold()
+            }
+
+            
             Button(action: {
                 params.changeMoney(val: 300)
                 Haptic.impact(style: .heavy)
@@ -193,23 +201,6 @@ struct SettingsView: View {
                        Button(action: {
                            Haptic.impact(style: .heavy)
                            params[Stat.id("MoodLevel")] -= 1
-                       }, label: {
-                           Text("-")
-                       })
-                   }.buttonStyle(BorderedButtonStyle())
-
-                   HStack {
-                       Text("SleepinessLevel \(Int(params[Stat.id("SleepinessLevel")]))")
-                       Spacer()
-                       Button(action: {
-                           Haptic.impact(style: .heavy)
-                           params[Stat.id("SleepinessLevel")] += 1
-                       }, label: {
-                           Text("+")
-                       })
-                       Button(action: {
-                           Haptic.impact(style: .heavy)
-                           params[Stat.id("SleepinessLevel")] -= 1
                        }, label: {
                            Text("-")
                        })

@@ -21,12 +21,17 @@
 		920781D22C96D73E00DE2FB9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920781D12C96D73E00DE2FB9 /* SettingsView.swift */; };
 		920781D42C9701C200DE2FB9 /* StatParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920781D32C9701C200DE2FB9 /* StatParameterView.swift */; };
 		92125ADF2C99985900C8B0D2 /* FastAppLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 92125ADE2C99985900C8B0D2 /* FastAppLibrary */; };
+		92125AE12C99A66D00C8B0D2 /* CardsWsipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92125AE02C99A66D00C8B0D2 /* CardsWsipe.swift */; };
+		92125AE42C9A0BAB00C8B0D2 /* Glur in Frameworks */ = {isa = PBXBuildFile; productRef = 92125AE32C9A0BAB00C8B0D2 /* Glur */; };
 		922E39612C936B6B00AC4F6D /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E39602C936B6B00AC4F6D /* Animator.swift */; };
 		922E39632C937E5800AC4F6D /* Commands.json in Resources */ = {isa = PBXBuildFile; fileRef = 922E39622C937E5800AC4F6D /* Commands.json */; };
 		922E39662C9382D400AC4F6D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 922E39652C9382D400AC4F6D /* SwiftyJSON */; };
 		922E39682C9458A300AC4F6D /* Marketitems.json in Resources */ = {isa = PBXBuildFile; fileRef = 922E39672C9458A300AC4F6D /* Marketitems.json */; };
 		922E396A2C94599300AC4F6D /* MarketItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E39692C94599300AC4F6D /* MarketItemsController.swift */; };
 		922E396C2C948ABA00AC4F6D /* DateKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E396B2C948ABA00AC4F6D /* DateKeeper.swift */; };
+		9241F6942C9CA3F3001B4517 /* SwiftUITooltip in Frameworks */ = {isa = PBXBuildFile; productRef = 9241F6932C9CA3F3001B4517 /* SwiftUITooltip */; };
+		9241F6962C9D7998001B4517 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241F6952C9D7998001B4517 /* Constants.swift */; };
+		9241F6982C9DC32C001B4517 /* ItemsEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241F6972C9DC32C001B4517 /* ItemsEditor.swift */; };
 		9289B7082C8B41FF005ECB1A /* CatTamagochiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B7072C8B41FF005ECB1A /* CatTamagochiApp.swift */; };
 		9289B70A2C8B41FF005ECB1A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B7092C8B41FF005ECB1A /* GameView.swift */; };
 		9289B70E2C8B4201005ECB1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9289B70D2C8B4201005ECB1A /* Assets.xcassets */; };
@@ -67,11 +72,14 @@
 		920781C32C95BB3400DE2FB9 /* evil.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evil.mp4; sourceTree = "<group>"; };
 		920781D12C96D73E00DE2FB9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		920781D32C9701C200DE2FB9 /* StatParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatParameterView.swift; sourceTree = "<group>"; };
+		92125AE02C99A66D00C8B0D2 /* CardsWsipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsWsipe.swift; sourceTree = "<group>"; };
 		922E39602C936B6B00AC4F6D /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		922E39622C937E5800AC4F6D /* Commands.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Commands.json; sourceTree = "<group>"; };
 		922E39672C9458A300AC4F6D /* Marketitems.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Marketitems.json; sourceTree = "<group>"; };
 		922E39692C94599300AC4F6D /* MarketItemsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItemsController.swift; sourceTree = "<group>"; };
 		922E396B2C948ABA00AC4F6D /* DateKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateKeeper.swift; sourceTree = "<group>"; };
+		9241F6952C9D7998001B4517 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9241F6972C9DC32C001B4517 /* ItemsEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsEditor.swift; sourceTree = "<group>"; };
 		9289B7042C8B41FF005ECB1A /* CatTamagochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatTamagochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9289B7072C8B41FF005ECB1A /* CatTamagochiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTamagochiApp.swift; sourceTree = "<group>"; };
 		9289B7092C8B41FF005ECB1A /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -105,7 +113,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				922E39662C9382D400AC4F6D /* SwiftyJSON in Frameworks */,
+				9241F6942C9CA3F3001B4517 /* SwiftUITooltip in Frameworks */,
 				9289B71E2C8B4844005ECB1A /* ChatGPTSwift in Frameworks */,
+				92125AE42C9A0BAB00C8B0D2 /* Glur in Frameworks */,
 				920781D02C95EB7A00DE2FB9 /* ConfettiSwiftUI in Frameworks */,
 				92125ADF2C99985900C8B0D2 /* FastAppLibrary in Frameworks */,
 				9289B7192C8B4575005ECB1A /* FastAppLibrary in Frameworks */,
@@ -155,6 +165,9 @@
 				920781D12C96D73E00DE2FB9 /* SettingsView.swift */,
 				920781D32C9701C200DE2FB9 /* StatParameterView.swift */,
 				92E5B1292C983EEB00E51EFA /* IntroView.swift */,
+				92125AE02C99A66D00C8B0D2 /* CardsWsipe.swift */,
+				9241F6952C9D7998001B4517 /* Constants.swift */,
+				9241F6972C9DC32C001B4517 /* ItemsEditor.swift */,
 			);
 			path = CatTamagochi;
 			sourceTree = "<group>";
@@ -257,6 +270,8 @@
 				922E39652C9382D400AC4F6D /* SwiftyJSON */,
 				920781CF2C95EB7A00DE2FB9 /* ConfettiSwiftUI */,
 				92125ADE2C99985900C8B0D2 /* FastAppLibrary */,
+				92125AE32C9A0BAB00C8B0D2 /* Glur */,
+				9241F6932C9CA3F3001B4517 /* SwiftUITooltip */,
 			);
 			productName = CatTamagochi;
 			productReference = 9289B7042C8B41FF005ECB1A /* CatTamagochi.app */;
@@ -291,6 +306,8 @@
 				922E39642C9382D300AC4F6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				920781CE2C95EB7A00DE2FB9 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				92125ADD2C99985900C8B0D2 /* XCRemoteSwiftPackageReference "FastApp" */,
+				92125AE22C9A0BAB00C8B0D2 /* XCRemoteSwiftPackageReference "Glur" */,
+				9241F6922C9CA3F3001B4517 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */,
 			);
 			productRefGroup = 9289B7052C8B41FF005ECB1A /* Products */;
 			projectDirPath = "";
@@ -345,8 +362,11 @@
 			files = (
 				9289B72F2C8CB129005ECB1A /* TestCommand.swift in Sources */,
 				9289B72A2C8C7C67005ECB1A /* CatParametrs.swift in Sources */,
+				92125AE12C99A66D00C8B0D2 /* CardsWsipe.swift in Sources */,
 				9289B7312C8CE2AC005ECB1A /* CatGPTService.swift in Sources */,
 				922E396A2C94599300AC4F6D /* MarketItemsController.swift in Sources */,
+				9241F6982C9DC32C001B4517 /* ItemsEditor.swift in Sources */,
+				9241F6962C9D7998001B4517 /* Constants.swift in Sources */,
 				92E5B12A2C983EEB00E51EFA /* IntroView.swift in Sources */,
 				9289B70A2C8B41FF005ECB1A /* GameView.swift in Sources */,
 				922E39612C936B6B00AC4F6D /* Animator.swift in Sources */,
@@ -493,21 +513,25 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CatTamagochi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cat;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.simulation-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = live.CatTamagochi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.01lab.cat.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -523,21 +547,25 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CatTamagochi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cat;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.simulation-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = live.CatTamagochi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.01lab.cat.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -581,12 +609,28 @@
 				kind = branch;
 			};
 		};
+		92125AE22C9A0BAB00C8B0D2 /* XCRemoteSwiftPackageReference "Glur" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joogps/Glur";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 		922E39642C9382D300AC4F6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.2;
+			};
+		};
+		9241F6922C9CA3F3001B4517 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quassum/SwiftUI-Tooltip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
 			};
 		};
 		9289B71C2C8B4844005ECB1A /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
@@ -610,10 +654,20 @@
 			package = 92125ADD2C99985900C8B0D2 /* XCRemoteSwiftPackageReference "FastApp" */;
 			productName = FastAppLibrary;
 		};
+		92125AE32C9A0BAB00C8B0D2 /* Glur */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92125AE22C9A0BAB00C8B0D2 /* XCRemoteSwiftPackageReference "Glur" */;
+			productName = Glur;
+		};
 		922E39652C9382D400AC4F6D /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 922E39642C9382D300AC4F6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		9241F6932C9CA3F3001B4517 /* SwiftUITooltip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9241F6922C9CA3F3001B4517 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */;
+			productName = SwiftUITooltip;
 		};
 		9289B7182C8B4575005ECB1A /* FastAppLibrary */ = {
 			isa = XCSwiftPackageProductDependency;

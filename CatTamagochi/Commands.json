@@ -13,17 +13,18 @@
       {
         "parameter": "HealthLevel",
         "value": 0.5,
-        "animation": "happy",
+        "animationName": "happy",
         "sound": "play.wav"
       },
       {
         "parameter": "EnergyLevel",
         "value": -5.0
       }
-    ]
+    ],
+    "presence": []
   },
   {
-    "commandName": "play with ball",
+    "commandName": "play_with_ball",
     "description": "Give a ball to cat",
     "requirements": [
       {
@@ -36,14 +37,15 @@
       {
         "parameter": "HealthLevel",
         "value": 0.7,
-        "animation": "play",
+        "animationName": "play",
         "sound": "play.wav"
       },
       {
         "parameter": "EnergyLevel",
         "value": -7.0
       }
-    ]
+    ],
+    "presence": []
   },
   {
     "commandName": "hit",
@@ -53,10 +55,11 @@
       {
         "parameter": "HealthLevel",
         "value": -5.5,
-        "animation": "engry",
+        "animationName": "engry",
         "sound": "engry.wav"
       }
-    ]
+    ],
+    "presence": []
   },
   {
     "commandName": "sharp",
@@ -96,7 +99,7 @@
       {
         "parameter": "HealthLevel",
         "value": 1.5,
-        "animation": "eat",
+        "animationName": "eat",
         "sound": "play.wav"
       },
       {
@@ -107,7 +110,8 @@
         "parameter": "HungerLevel",
         "value": -4.0
       }
-    ]
+    ],
+    "presence": []
   },
   {
     "commandName": "beatle",
@@ -118,7 +122,7 @@
       {
         "parameter": "DesireToPlayLevel",
         "value": -5.5,
-        "animation": "hunt",
+        "animationName": "hunt",
         "sound": "play.wav"
       },
       {
@@ -129,7 +133,8 @@
         "parameter": "TrainingLevel",
         "value": 2.0
       }
-    ]
+    ],
+    "presence": []
   },
   {
     "commandName": "vaccine",
@@ -140,7 +145,7 @@
       {
         "parameter": "MoodLevel",
         "value": -20.5,
-        "animation": "medicine",
+        "animationName": "medicine",
         "sound": "play.wav"
       },
       {
@@ -151,10 +156,11 @@
         "parameter": "FriendlinessLevel",
         "value": -10.0
       }
-    ]
+    ],
+    "presence": []
   },
   {
-    "commandName": "promise to buy toys",
+    "commandName": "promise_to_buy_toys",
     "description": "To promise to buy toys, but not to fulfill the promise",
     "requirements": [],
     "presence": [],
@@ -162,7 +168,7 @@
       {
         "parameter": "MoodLevel",
         "value": 10.5,
-        "animation": "happy",
+        "animationName": "happy",
         "sound": "play.wav"
       },
       {
@@ -173,6 +179,7 @@
         "parameter": "FriendlinessLevel",
         "value": 3.0
       }
-    ]
+    ],
+    "presence": []
   }
 ]
