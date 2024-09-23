@@ -1,79 +1,184 @@
 [
   {
-    "id": "t1_scr_pst1",
-    "itemName": "Практичность на улицах",
-    "description": "Рециклированные материалы, долговечность.",
-    "image": "scratchingPost-13",
-    "price": 100
+    "id": "low-budget_cat_water_bowl",
+    "itemName": "Water Bowl",
+    "description": "This plastic bowl leaves an aftertaste",
+    "image": "low-budget_cat_water_bowl",
+    "price": 20
   },
   {
-    "id": "t1_scr_pst2",
-    "itemName": "Классика для Кота",
-    "description": "Простая, удобная, надежная.",
-    "image": "scratchingPost-2",
-    "price": 200
+    "id": "cat_food_lowbudget",
+    "itemName": "Husk Food",
+    "description": "It crunches a bit, but it's cheap",
+    "image": "cat_food_lowbudget",
+    "price": 30
   },
   {
-    "id": "t1_scr_pst3",
-    "itemName": "Космическая Одиссея",
-    "description": "Инновационные материалы, футуристичный дизайн.",
-    "image": "scratchingPost-3",
-    "price": 300
+    "id": "cat_bad_lowbudget",
+    "itemName": "Pallets",
+    "description": "If you ignore the splinters, you can take a nap",
+    "image": "cat_bad_lowbudget",
+    "price": 50
   },
   {
-    "id": "t1_scr_pst4",
-    "itemName": "Галактический Мир",
-    "description": "Нестандартная форма, загадочная.",
-    "image": "scratchingPost-4",
-    "price": 400
+    "id": "scratching_post_lowbudget",
+    "itemName": "Homeless House",
+    "description": "Cardboard boxes and old cushions... doesn't feel bad to scratch it",
+    "image": "scratching_post_lowbudget",
+    "price": 50
   },
   {
-    "id": "t1_scr_pst5",
-    "itemName": "Робо-Когти",
-    "description": "Механическая сборка, автоматизация.",
-    "image": "scratchingPost-5",
+    "id": "cat_food_normal",
+    "itemName": "Wet Food",
+    "description": "Daily food for your cat",
+    "image": "cat_food_normal",
+    "price": 250
+  },
+  {
+    "id": "cat_bad_normal",
+    "itemName": "Cat Bed",
+    "description": "A regular bed for a regular cat",
+    "image": "cat_bad_normal",
     "price": 500
   },
   {
-    "id": "t1_scr_pst6",
-    "itemName": "Кристаллические Сны",
-    "description": "Сверкающие кристаллы, роскошь.",
-    "image": "scratchingPost-6",
-    "price": 600
-  },
-  {
-    "id": "t1_scr_pst7",
-    "itemName": "Световой Фантом",
-    "description": "Голографические эффекты, эфемерность.",
-    "image": "scratchingPost-7",
-    "price": 700
-  },
-  {
-    "id": "t1_scr_pst8",
-    "itemName": "Римские Руины",
-    "description": "Колонны, мрамор, величие.",
-    "image": "scratchingPost-9",
+    "id": "laser_pointer",
+    "itemName": "Laser Pointer",
+    "description": "You can play and lift your mood",
+    "image": "laser_pointer",
     "price": 800
   },
   {
-    "id": "t1_scr_pst9",
-    "itemName": "Желейный Пузырь",
-    "description": "Мягкость, прозрачность, необычность.",
-    "image": "scratchingPost-11",
+    "id": "scratching_post_normal",
+    "itemName": "Scratching Post",
+    "description": "Nothing fancy, but it gets the job done. Wrapped in twine",
+    "image": "scratching_post_normal",
     "price": 900
   },
   {
-    "id": "t1_scr_pst10",
-    "itemName": "Волшебный Перстень",
-    "description": "Загадочная, энергетика, стиль.",
-    "image": "scratchingPost-12",
-    "price": 1000
+    "id": "luxurious_cat_water_fountain",
+    "itemName": "Fountain of Youth",
+    "description": "This water fountain removes wrinkles and extra weight",
+    "image": "luxurious_cat_water_fountain",
+    "price": 2700
   },
   {
-    "id": "t1_scr_pst11",
-    "itemName": "Темные Ритуалы",
-    "description": "Готика, мистика, символика.",
-    "image": "scratchingPost-1",
-    "price": 1100
+    "id": "cat_bad_gold",
+    "itemName": "Golden Cushion",
+    "description": "Royal-level sleep and recovery!",
+    "image": "cat_bad_gold",
+    "price": 4500
+  },
+  {
+    "id": "cat_food_gold",
+    "itemName": "Food of the Gods",
+    "description": "The choice for those who love their pet",
+    "image": "cat_food_gold",
+    "price": 4700
+  },
+  {
+    "id": "cat_armor_designed",
+    "itemName": "Armor",
+    "description": "With this armor, you can attack the boss of the mice",
+    "image": "cat_armor_designed",
+    "price": 10000
+  },
+  {
+    "id": "syringe_with_medication",
+    "itemName": "Vitamins",
+    "description": "Necessary medications for your pet. Cures everything!",
+    "image": "syringe_with_medication",
+    "price": 10500
+  },
+  {
+    "id": "document_royal_title",
+    "itemName": "Chief Mouser",
+    "description": "Title and residence at the UK Prime Minister's residence",
+    "image": "document_royal_title",
+    "price": 12300
+  },
+  {
+    "id": "hemingway_typewriter",
+    "itemName": "Hemingway's Typewriter",
+    "description": "Walk on the keys, and you'll grow a new finger",
+    "image": "hemingway_typewriter",
+    "price": 23000
+  },
+  {
+    "id": "magical_item_mad_lory",
+    "itemName": "Mad Lory",
+    "description": "This magical tool might resurrect a cat. Well... maybe, it hasn't been tested.",
+    "image": "magical_item_mad_lory",
+    "price": 27000
+  },
+  {
+    "id": "scratching_post_robot",
+    "itemName": "Smart Scratching Post",
+    "description": "No effort required, this thing does the cat manicure itself",
+    "image": "scratching_post_robot",
+    "price": 30000
+  },
+  {
+    "id": "luxury_laser_pointer",
+    "itemName": "Smart Laser Pointer",
+    "description": "Changes colors, orders pizza, diagnoses sleep deprivation",
+    "image": "luxury_laser_pointer",
+    "price": 50000
+  },
+  {
+    "id": "navy_medal",
+    "itemName": "Bravery Medal",
+    "description": "Boosts morale for hunting giant rats",
+    "image": "navy_medal",
+    "price": 55000
+  },
+  {
+    "id": "ring_of_power_for_a_cat",
+    "itemName": "Ring of Power",
+    "description": "Allows you to open canned fish with sheer willpower",
+    "image": "ring_of_power_for_a_cat",
+    "price": 70000
+  },
+  {
+    "id": "schrodingers_box",
+    "itemName": "Schrodinger's Box",
+    "description": "Dangerous thing. Better not to play with it. It might shock you.",
+    "image": "schrodingers_box",
+    "price": 78300
+  },
+  {
+    "id": "small_spacecraft",
+    "itemName": "Treat Generator",
+    "description": "Generates a random treat for the cat and plays fun music",
+    "image": "small_spacecraft",
+    "price": 80900
+  },
+  {
+    "id": "scratching_post_gele",
+    "itemName": "Gel Scratching Post",
+    "description": "Doesn't sharpen claws, but moisturizes paws",
+    "image": "scratching_post_gele",
+    "price": 90000
+  },
+  {
+    "id": "scratching_post_romul",
+    "itemName": "Tiberius",
+    "description": "Palace-house of Caesar. Brings luck, but a bit hard to sleep on",
+    "image": "scratching_post_romul",
+    "price": 95000
+  },
+  {
+    "id": "small_style_space_rocket",
+    "itemName": "Felix",
+    "description": "Suborbital flight possible! But it always lands in France",
+    "image": "small_style_space_rocket",
+    "price": 100000
+  },
+  {
+    "id": "train_conductors_cap",
+    "itemName": "Station Master's Cap",
+    "description": "Become the station master of a railway!",
+    "image": "train_conductors_cap",
+    "price": 130000
   }
 ]

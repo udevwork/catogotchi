@@ -60,30 +60,47 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     func scheduleDailyNotification() {
-        // Создаем контент уведомления
-        let content = UNMutableNotificationContent()
-        content.title = "The cat needs attention!"
-        content.body = "You need to feed your pet!"
-        content.sound = UNNotificationSound.default
-        
-        // Настраиваем триггер на основе времени (каждый день в 9:00)
-        var dateComponents = DateComponents()
-        dateComponents.hour = 9
-        dateComponents.minute = 0
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
-        // Создаем запрос на уведомление
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        
-        // Добавляем запрос в центр уведомлений
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if let error = error {
-                print("Ошибка при создании уведомления: \(error.localizedDescription)")
-            } else {
-                print("Уведомление успешно добавлено")
+        UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+            // Проверяем, существует ли уже уведомление на 9:00
+            let notificationExists = requests.contains(where: { request in
+                guard let trigger = request.trigger as? UNCalendarNotificationTrigger else {
+                    return false
+                }
+                return trigger.dateComponents.hour == 9 && trigger.dateComponents.minute == 0
+            })
+            
+            // Если уведомление на 9:00 уже существует, не создаем новое
+            if notificationExists {
+                print("Уведомление уже запланировано на 9:00")
+                return
+            }
+            
+            // Создаем контент уведомления
+            let content = UNMutableNotificationContent()
+            content.title = "The cat needs your attention!"
+            content.body = "It's time to feed your pet!"
+            content.sound = UNNotificationSound.default
+            
+            // Настраиваем триггер на основе времени (каждый день в 9:00)
+            var dateComponents = DateComponents()
+            dateComponents.hour = 9
+            dateComponents.minute = 0
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            
+            // Создаем запрос на уведомление
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            
+            // Добавляем запрос в центр уведомлений
+            UNUserNotificationCenter.current().add(request) { (error) in
+                if let error = error {
+                    print("Ошибка при создании уведомления: \(error.localizedDescription)")
+                } else {
+                    print("Уведомление успешно добавлено")
+                }
             }
         }
     }
+
 }
 
 

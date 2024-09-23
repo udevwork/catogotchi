@@ -49,12 +49,6 @@
 		9289B7332C8CE779005ECB1A /* GPTAPIKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9289B7322C8CE779005ECB1A /* GPTAPIKey.txt */; };
 		92B809802C8F037A002ACADA /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B8097F2C8F037A002ACADA /* SoundPlayerView.swift */; };
 		92B8098B2C8F04BF002ACADA /* tolk-0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809832C8F04BF002ACADA /* tolk-0.wav */; };
-		92B8098C2C8F04BF002ACADA /* tolk-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809842C8F04BF002ACADA /* tolk-1.wav */; };
-		92B8098D2C8F04BF002ACADA /* tolk-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809852C8F04BF002ACADA /* tolk-2.wav */; };
-		92B8098E2C8F04BF002ACADA /* tolk-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809862C8F04BF002ACADA /* tolk-3.wav */; };
-		92B8098F2C8F04BF002ACADA /* tolk-4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809872C8F04BF002ACADA /* tolk-4.wav */; };
-		92B809902C8F04BF002ACADA /* tolk-5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809882C8F04BF002ACADA /* tolk-5.wav */; };
-		92B809912C8F04BF002ACADA /* tolk-6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B809892C8F04BF002ACADA /* tolk-6.wav */; };
 		92E5B1282C982C0A00E51EFA /* loading.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92E5B1272C982C0900E51EFA /* loading.mp4 */; };
 		92E5B12A2C983EEB00E51EFA /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5B1292C983EEB00E51EFA /* IntroView.swift */; };
 /* End PBXBuildFile section */
@@ -97,12 +91,6 @@
 		9289B7322C8CE779005ECB1A /* GPTAPIKey.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = GPTAPIKey.txt; sourceTree = "<group>"; };
 		92B8097F2C8F037A002ACADA /* SoundPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
 		92B809832C8F04BF002ACADA /* tolk-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-0.wav"; sourceTree = "<group>"; };
-		92B809842C8F04BF002ACADA /* tolk-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-1.wav"; sourceTree = "<group>"; };
-		92B809852C8F04BF002ACADA /* tolk-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-2.wav"; sourceTree = "<group>"; };
-		92B809862C8F04BF002ACADA /* tolk-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-3.wav"; sourceTree = "<group>"; };
-		92B809872C8F04BF002ACADA /* tolk-4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-4.wav"; sourceTree = "<group>"; };
-		92B809882C8F04BF002ACADA /* tolk-5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-5.wav"; sourceTree = "<group>"; };
-		92B809892C8F04BF002ACADA /* tolk-6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tolk-6.wav"; sourceTree = "<group>"; };
 		92E5B1272C982C0900E51EFA /* loading.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loading.mp4; sourceTree = "<group>"; };
 		92E5B1292C983EEB00E51EFA /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,12 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				92B809832C8F04BF002ACADA /* tolk-0.wav */,
-				92B809842C8F04BF002ACADA /* tolk-1.wav */,
-				92B809852C8F04BF002ACADA /* tolk-2.wav */,
-				92B809862C8F04BF002ACADA /* tolk-3.wav */,
-				92B809872C8F04BF002ACADA /* tolk-4.wav */,
-				92B809882C8F04BF002ACADA /* tolk-5.wav */,
-				92B809892C8F04BF002ACADA /* tolk-6.wav */,
 			);
 			path = Tolk;
 			sourceTree = "<group>";
@@ -326,9 +308,7 @@
 				9289B7252C8C6E10005ECB1A /* PixelifySans-SemiBold.ttf in Resources */,
 				9289B7262C8C6E10005ECB1A /* PixelifySans-Medium.ttf in Resources */,
 				922E39632C937E5800AC4F6D /* Commands.json in Resources */,
-				92B809902C8F04BF002ACADA /* tolk-5.wav in Resources */,
 				920781C62C95BB3500DE2FB9 /* engry.mp4 in Resources */,
-				92B8098E2C8F04BF002ACADA /* tolk-3.wav in Resources */,
 				920781C72C95BB3500DE2FB9 /* happy.mp4 in Resources */,
 				920781C82C95BB3500DE2FB9 /* dead.mp4 in Resources */,
 				920781C52C95BB3500DE2FB9 /* medicine.mp4 in Resources */,
@@ -339,15 +319,11 @@
 				9289B7272C8C6E10005ECB1A /* PixelifySans-Regular.ttf in Resources */,
 				9289B7282C8C6E10005ECB1A /* PixelifySans-Bold.ttf in Resources */,
 				92E5B1282C982C0A00E51EFA /* loading.mp4 in Resources */,
-				92B8098C2C8F04BF002ACADA /* tolk-1.wav in Resources */,
 				9289B7112C8B4201005ECB1A /* Preview Assets.xcassets in Resources */,
-				92B8098F2C8F04BF002ACADA /* tolk-4.wav in Resources */,
 				920781C92C95BB3500DE2FB9 /* play.mp4 in Resources */,
 				920781CC2C95BB3500DE2FB9 /* talk.mp4 in Resources */,
-				92B809912C8F04BF002ACADA /* tolk-6.wav in Resources */,
 				9289B70E2C8B4201005ECB1A /* Assets.xcassets in Resources */,
 				9289B7332C8CE779005ECB1A /* GPTAPIKey.txt in Resources */,
-				92B8098D2C8F04BF002ACADA /* tolk-2.wav in Resources */,
 				920781CB2C95BB3500DE2FB9 /* hunt.mp4 in Resources */,
 				920781CA2C95BB3500DE2FB9 /* eat.mp4 in Resources */,
 			);

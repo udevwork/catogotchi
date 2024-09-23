@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "magical_item_mad_lory.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

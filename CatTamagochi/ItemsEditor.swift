@@ -9,6 +9,22 @@ import SwiftUI
 import SwiftyJSON
 import FastAppLibrary
 
+enum Relations: String, CaseIterable {
+    case more = "more"
+    case equal = "equal"
+    case less = "less"
+    
+    func symbol() -> String {
+        switch self {
+            case .more:
+                ">"
+            case .equal:
+                "="
+            case .less:
+                "<"
+        }
+    }
+}
 
 // MARK: - Command
 class CommandModel: Codable, Identifiable {
@@ -136,12 +152,65 @@ class ItemsEditorModel: ObservableObject {
     
     @Published var suggestion: [CommandModel] = []
     
+    @Published var animationList: [String] = []
+    @Published var soundList: [String] = []
+    @Published var items: [MarketItem] = []
+
+    
     init() {
         if let suggestions = loadSuggestionsFromFile() {
             self.suggestion = suggestions
         } else if let suggestions = findCommandSuggestion() {
             self.suggestion = suggestions
         }
+        
+        if let animations = listMP4Files() {
+            animationList = animations
+        }
+  
+        if let sounds = listWAVFiles() {
+            soundList = sounds
+        }
+  
+        items = listOfMarketItems()
+    }
+    
+    
+    func listOfMarketItems() -> [MarketItem] {
+        let path = Bundle.main.path(forResource: "Marketitems", ofType: "json")
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
+        let json = try! JSON(data: data)
+        
+        do {
+            let objData = try json.rawData()
+            return try JSONDecoder().decode([MarketItem].self, from: objData)
+            
+        } catch let error {
+            print(error.localizedDescription)
+            return []
+        }
+    }
+    
+    func listMP4Files() -> [String]? {
+        // Ищем все файлы с расширением .mp4 в главном Bundle
+        if let mp4Files = Bundle.main.urls(forResourcesWithExtension: "mp4", subdirectory: nil) {
+            // Получаем названия файлов без расширений
+            var result = mp4Files.map { $0.deletingPathExtension().lastPathComponent }
+            result.append("NaN")
+            return result
+        }
+        return nil
+    }
+    
+    func listWAVFiles() -> [String]? {
+        // Ищем все файлы с расширением .mp4 в главном Bundle
+        if let wavFiles = Bundle.main.urls(forResourcesWithExtension: "wav", subdirectory: nil) {
+            // Получаем названия файлов без расширений
+            var result =  wavFiles.map { $0.deletingPathExtension().lastPathComponent }
+            result.append("NaN")
+            return result
+        }
+        return nil
     }
     
     func findCommandSuggestion() -> [CommandModel]? {
@@ -160,8 +229,22 @@ class ItemsEditorModel: ObservableObject {
     }
     
     func addCommand() {
-        let newCommand = CommandModel(commandName: "new")
+        let newCommand = CommandModel(commandName: "new_command")
+        
+        let req = RequirementModel()
+        req.parameter = "EnergyLevel"
+        req.relation = "more"
+        req.value = 0
+        newCommand.requirements.append(req)
+        
+        let inf = InfluenceModel()
+        inf.parameter = "EnergyLevel"
+        inf.value = -20
+        newCommand.influence.append(inf)
+        
         suggestion.append(newCommand)
+        FastApp.alerts.show(title: "Created new command")
+        Haptic.impact()
     }
     
     func removeCommand(cmd: CommandModel) {
@@ -228,9 +311,12 @@ class ItemsEditorModel: ObservableObject {
                 // Сохранение данных в файл
                 try jsonData.write(to: filePath)
                 print("Data saved to \(filePath)")
+                FastApp.alerts.show(title: "Saved!")
+                Haptic.impact()
             }
         } catch let error {
             print("Error saving data: \(error.localizedDescription)")
+            FastApp.alerts.show(title: "Save error")
         }
     }
     
@@ -291,94 +377,233 @@ struct ItemsEditor: View {
         ZStack(alignment:.bottom) {
             List {
                 ForEach($model.suggestion, id: \.id) { $cmd in
-                    Section(header: Text($cmd.commandName.wrappedValue)) {
-                        
-                        FloatingTextField(text: $cmd.commandName, placehopder: "command name")
-                        FloatingTextField(text: $cmd.description, placehopder: "description")
-                        
-                        Button {
-                            model.removeCommand(cmd: cmd)
-                        } label: {
-                            Text("delete cmd")
-                        }.buttonStyle(.bordered)
+                    Section {
+                        HStack(alignment:.top) {
+                            
+                            VStack(alignment: .center, spacing: 5) {
+                                Circle().frame(width: 10, height: 10)
+                                Rectangle().frame(width: 2).clipShape(RoundedRectangle(cornerRadius: 1))
+                            }.foregroundStyle(.gray)
+                           
+                            
+                            
+                            VStack(alignment: .leading) {
+                                
+                                VStack(alignment:.leading, spacing: 20) {
+                                    
+                                    TextInputView(label: "command name", value: $cmd.commandName).onSubmit {
+                                        cmd.commandName = cmd.commandName.replaceSpacesAndTrim()
+                                        model.update()
+                                    }
+                                    TextInputView(label: "description", value: $cmd.description)
+                                }
+                                .padding()
+                                .background(Color.systemGray6)
+                                .clipShape(RoundedRectangle(cornerRadius: 14))
+                                
+                                Rectangle().frame(height: 30).foregroundStyle(.clear)
+                                
+                                Text("Requirements:").bold().listRowSeparator(.hidden)
+                                
+                                ForEach($cmd.requirements, id: \.id) { $req in
+                                    HStack(spacing: 0) {
+                                        
+                                        Menu {
+                                            Button("Money", action: {
+                                                req.parameter = "Money"
+                                                model.update()
+                                            })
+                                            ForEach(Array(CatParameters.shared.parameters.keys), id: \.self) { param in
+                                               
+                                                Button(param, action: {
+                                                    req.parameter = param
+                                                    model.update()
+                                                })
+                                            }
+                                        } label: {
+                                            Text("\(req.parameter)")
+                                        }.buttonStyle(.bordered)
+                                        
+                                        Spacer()
+                                        
+                                        Menu {
+                                            ForEach(Relations.allCases, id: \.self) { rele in
+                                            
+                                                Button(rele.symbol(), action: {
+                                                    req.relation = rele.rawValue
+                                                    model.update()
+                                                })
+                                            }
+                                           
+                                        } label: {
+                                            Text(Relations(rawValue: req.relation)?.symbol() ?? "")
+                                        }.buttonStyle(.bordered)
+                                        
+                                        Spacer()
+                                        
+                                        DoubleInputView(label: "Value", value: $req.value)
+                                            .frame(width: 75)
+                                        
+                                        Spacer()
+                                        
+                                        Button {
+                                            model.removeRequirement(cmd: cmd, req: $req.wrappedValue)
+                                        } label: {
+                                            Image(systemName: "trash.fill")
+                                        }.buttonStyle(.bordered)
+                                    }
+                                    .padding(5)
+                                    .background(Color.systemGray6)
+                                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                                }
+                                
+                                Button(action: {
+                                    cmd.requirements.append(RequirementModel())
+                                    model.update()
+                                }) {
+                                    Text("+ Add Requirement")
+                                }.buttonStyle(.bordered)
+                          
+                                Rectangle().frame(height: 30).foregroundStyle(.clear)
+                                
+                                
+                                Text("Influence:").bold()
+                                    .listRowSeparator(.hidden)
+                                
+                                ForEach($cmd.influence, id: \.id) { $inf in
+                                    VStack(alignment:.leading, spacing: 20) {
+                                        
+                                        HStack {
+                                            Menu {
+                                                Button("Money", action: {
+                                                    inf.parameter = "Money"
+                                                    model.update()
+                                                })
+                                                ForEach(Array(CatParameters.shared.parameters.keys), id: \.self) { param in
+                                                    
+                                                    Button(param, action: {
+                                                        inf.parameter = param
+                                                        model.update()
+                                                    })
+                                                }
+                                                
+                                            } label: {
+                                                Text("\(inf.parameter)").bold()
+                                            }.buttonStyle(.bordered)
+                                            
+                                            Spacer()
+                                            DoubleInputView(label: "Value", value: $inf.value)
+                                                .frame(width: 75)
+                                            
+                                        }
+                                        
+                                        Divider()
+                                        
+                                        Menu {
+                              
+                                            ForEach(model.animationList, id: \.self) { anim in
+                                            
+                                                Button(anim, action: {
+                                                    inf.animationName = anim
+                                                    if anim == "NaN" {
+                                                        inf.animationName = nil
+                                                    }
+                                                    model.update()
+                                                })
+                                            }
+                                           
+                                        } label: {
+                                            Text("animation: ").foregroundStyle(.black) + Text(inf.animationName ?? "-").bold()
+                                        }
+                                        
+                                        Menu {
+                              
+                                            ForEach(model.soundList, id: \.self) { soun in
+                                            
+                                                Button(soun, action: {
+                                                    inf.sound = soun
+                                                    if soun == "NaN" {
+                                                        inf.sound = nil
+                                                    }
+                                                    model.update()
+                                                })
+                                            }
+                                           
+                                        } label: {
+                                            Text("sound: ").foregroundStyle(.black) + Text(inf.sound ?? "-").bold()
+                                        }
+                                        
+                                      
+                                      
+                                        Button {
+                                            model.removeInfluence(cmd: cmd, inf: $inf.wrappedValue)
+                                        } label: {
+                                            Text("delete")
+                                        }.buttonStyle(.bordered)
+                                        
+                                    }
+                                    .padding()
+                                        .background(Color.systemGray6)
+                                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                                }
+                                
+                                Button(action: {
+                                    cmd.influence.append(InfluenceModel())
+                                    model.update()
+                                }) {
+                                    Text("+ Add Influence")
+                                }.buttonStyle(.bordered)
+                                
+                                Rectangle().frame(height: 30).foregroundStyle(.clear)
 
-                        
-                        Text("Requirements:").bold().listRowSeparator(.hidden)
-                        
-                        ForEach($cmd.requirements, id: \.id) { req in
-                            VStack(alignment:.leading) {
-                                FloatingTextField(text: req.parameter, placehopder: "parameter")
-                                FloatingTextField(text: req.relation, placehopder: "relation")
-                                TextField("Value", value: req.value, formatter: NumberFormatter())
-                                    .padding()
-                                    .background(Color.systemGray6)
-                                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                                Button {
-                                    model.removeRequirement(cmd: cmd, req: req.wrappedValue)
-                                } label: {
-                                    Text("delete requirement")
-                                }.buttonStyle(.bordered)
-                            }
-                        }
-                        
-                    
-                        
-                        Button(action: {
-                            cmd.requirements.append(RequirementModel())
-                            model.update()
-                        }) {
-                            Text("Add Requirement")
-                        } .listRowSeparator(.hidden)
-                        
-                        Text("Influence:").bold()
-                            .listRowSeparator(.hidden)
-                        
-                        ForEach($cmd.influence, id: \.id) { inf in
-                            VStack(alignment:.leading) {
-                                FloatingTextField(text: inf.parameter, placehopder: "Parameter")
-                                FloatingTextField(text: inf.animationName.bound, placehopder: "Animation")
-                                FloatingTextField(text: inf.sound.bound, placehopder: "Sound")
-                                TextField("Value", value: inf.value, formatter: NumberFormatter())
-                                    .padding()
-                                    .background(Color.systemGray6)
-                                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                                Button {
-                                    model.removeInfluence(cmd: cmd, inf: inf.wrappedValue)
-                                } label: {
-                                    Text("delete influence")
-                                }.buttonStyle(.bordered)
+                                
+                                Text("Presence:").bold()
+                                    .listRowSeparator(.hidden)
+                                VStack(alignment: .leading, spacing: 20) {
+                                    ForEach($cmd.presence, id: \.self) { prs in
+                                        HStack {
+                                            TextField("Presence", text: prs)
+                                            Spacer()
+                                            Button {
+                                                model.removePresence(cmd: cmd, pers: prs.wrappedValue)
+                                            } label: {
+                                                Text("delete")
+                                            }.buttonStyle(.bordered)
+                                        }
+                                    }
+                                  
+                                    Menu {
+                                        ForEach(model.items, id: \.id) { item in
+                                            Button(item.itemName ?? "", action: {
+                                                if let id = item.id {
+                                                    cmd.presence.append(id)
+                                                    model.update()
+                                                }
+                                            })
+                                        }
+                                    } label: {
+                                        Text("+ Add Presence").foregroundStyle(.black)
+                                    }
+                                    
+                                }
+                                .padding()
+                                .background(Color.systemGray6)
+                                .clipShape(RoundedRectangle(cornerRadius: 14))
                                 
                             }
                         }
-                        
-                     
-                        Button(action: {
-                            cmd.influence.append(InfluenceModel())
-                            model.update()
-                        }) {
-                            Text("Add Influence")
+                    } header: {
+                        Text($cmd.commandName.wrappedValue)
+                    } footer: {
+                        Button {
+                            model.removeCommand(cmd: cmd)
+                        } label: {
+                            Text("delete command")
                         }
-                        
-                        Text("Presence:").bold()
-                            .listRowSeparator(.hidden)
-                        ForEach($cmd.presence, id: \.self) { prs in
-                            TextField("Presence", text: prs)
-                            Button {
-                                model.removePresence(cmd: cmd, pers: prs.wrappedValue)
-                            } label: {
-                                Text("delete presence")
-                            }.buttonStyle(.bordered)
-                        }
-                        Button(action: {
-                            cmd.presence.append("")
-                            model.update()
-                        }) {
-                            Text("Add Presence")
-                        } .listRowSeparator(.hidden)
                     }
                     
                 }
-
+                
                 Rectangle().frame(height: 100).foregroundStyle(.clear)
             }.listStyle(.plain)
                 .listSectionSpacing(70)
@@ -406,7 +631,10 @@ struct ItemsEditor: View {
 }
 
 #Preview {
-    ItemsEditor().fontDesign(.monospaced)
+    NavigationStack {
+        ItemsEditor()
+            .fontDesign(.monospaced)
+    }
 }
 
 extension Binding where Value == String? {
@@ -424,5 +652,43 @@ extension Binding where Value == Double? {
             get: { self.wrappedValue ?? 0.0 },
             set: { self.wrappedValue = $0 }
         )
+    }
+}
+
+struct TextInputView: View {
+    var label: String // Динамическое название
+    
+    @Binding var value: String // Для String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(label).font(.footnote)
+            TextField(label, text: $value)
+            Rectangle().frame(height: 1)
+        }
+    }
+}
+
+struct DoubleInputView: View {
+    var label: String // Динамическое название
+    
+    @Binding var value: Double // Для Double
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(label).font(.footnote)
+            TextField(label, value: $value, formatter: NumberFormatter())
+                .keyboardType(.decimalPad)
+         
+            Rectangle().frame(height: 1)
+        }
+    }
+}
+
+extension String {
+    func replaceSpacesAndTrim() -> String {
+        // Обрезаем пробелы по бокам и заменяем оставшиеся пробелы на нижние подчеркивания
+        return self.trimmingCharacters(in: .whitespacesAndNewlines)
+                   .replacingOccurrences(of: " ", with: "_")
     }
 }

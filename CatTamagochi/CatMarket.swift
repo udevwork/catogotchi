@@ -56,34 +56,35 @@ struct CatMarketItemView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(item.itemName ?? "")
-                .padding(EdgeInsets(top: 10, leading: 15, bottom: 0, trailing: 10))
+           
             if let img = item.image {
                 ZStack(alignment: .bottomLeading, content: {
+                 
                     Image(img)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
+                    
                         .overlay(content: {
-                            LinearGradient(gradient: Gradient(colors: [Color.black, Color.clear, Color.clear]), startPoint: .bottom, endPoint: .top)
+                            LinearGradient(gradient: Gradient(colors: [Color.black, Color.clear, Color.clear]), startPoint: .top, endPoint: .bottom).opacity(0.5)
+                            LinearGradient(gradient: Gradient(colors: [Color.black, Color.clear, Color.clear]), startPoint: .bottom, endPoint: .top).opacity(0.9)
                         })
-                        .frame(height: 290)
+                      
                         .glur(radius: 38.0,
-                              offset: 0.6,
-                              interpolation: 0.9,
+                              offset: 0.8,
+                              interpolation: 0.6,
                               direction: .down
                         )
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                        .frame(height: 290)
+                     
+                
                     VStack(alignment: .leading) {
-                        if isPurchased(id: item.id ?? "") {
-                            Text("Owned!")
-                                .foregroundStyle(.white)
-                                .bold()
-                                .padding(.horizontal,15)
-                                .padding(.vertical,7)
-                                .background(.black)
-                                .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                        } else {
+                        Text(item.itemName ?? "")
+                         
+                            .fontWeight(.black)
+                            .foregroundStyle(.white)
+                            .shadow(color: .black, radius: 10)
+                        Spacer()
+                        
+                        if isPurchased(id: item.id ?? "") == false {
                             Button(action: {
                                 if let id = item.id, let cost = item.price {
                                     catParameters[Item.id(id)] = item.itemName ?? ""
@@ -105,7 +106,6 @@ struct CatMarketItemView: View {
                                 }
                                 .foregroundStyle(.white)
                                 .bold()
-                                
                                 .padding(.horizontal,12)
                                 .padding(.vertical,7)
                                 .background(.accent)
@@ -113,6 +113,7 @@ struct CatMarketItemView: View {
                                 
                             })
                             .disabled((item.price ?? 0) > catParameters.money)
+                            .opacity((item.price ?? 0) > catParameters.money ? 0.5 : 1)
                         }
                         Text(item.description ?? "")
                             .foregroundStyle(.white)
@@ -122,16 +123,28 @@ struct CatMarketItemView: View {
             }
         }
         .background(.white)
-        .clipShape(RoundedRectangle(cornerRadius: 15.0))
-        .opacity((item.price ?? 0) > catParameters.money ? 0.5 : 1)
+        .clipShape(RoundedRectangle(cornerRadius: 20.0))
         .confettiCannon(
             counter: $counter,
             repetitions: 3,
             repetitionInterval: 0.7
         )
+        .frame(width: 300, height: 300)
     }
 }
+
+
+
+
 #Preview {
-    //CatMarket(gamecontroller: GameViewController())
+//    CatMarket(gamecontroller: GameViewController())
     GameView()
+//    VStack {
+//        Spacer()
+//        CatMarketItemView(item: .init(id: "1", itemName: "Slava Kornilov", description: "Slava Kornilov | Creative Director at @GeexArts. Awwwards Jury 2022 | Connect with them on Dribbble;", image: "ring_of_power_for a cat", price: 20))
+//            .frame(width: 330, height: 520)
+//        Spacer()
+//    }.frame(width: .infinity)
+//    .background(.screenBack)
+   
 }

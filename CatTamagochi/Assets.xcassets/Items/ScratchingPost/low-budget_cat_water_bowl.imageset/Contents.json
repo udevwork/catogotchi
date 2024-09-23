@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "low-budget_cat_water_bowl.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
