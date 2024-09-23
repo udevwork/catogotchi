@@ -16,21 +16,64 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         
         let onboarding: [OnBoardingModel] = [
-            .init(image: "1", title: "Widget on the Watch Face", subTitle: "Quick access to any note directly from \"Always On.\"."),
-            .init(image: "2", title: "Notes and Planner", subTitle: "Data is stored locally and in your iCloud. You always have access."),
-            .init(image: "3", title: "Synchronization", subTitle: "Connection with your watch does not depend on the internet. Even without your phone, you can still access data on your watch.")
+            .init(
+                image: "1",
+                title: "Your AI Pet",
+                subTitle: "Create and take care of your cat."
+            ),
+            .init(
+                image: "2",
+                title: "Console",
+                subTitle: "Type commands to interact with your cat. You can feed, play, and engage with your pet through simple inputs."
+            ),
+            .init(
+                image: "3",
+                title: "Commands",
+                subTitle: "Start typing, and suggestions will guide you to the available commands."
+            ),
+            .init(
+                image: "3",
+                title: "Market",
+                subTitle: "Purchase items for your pet. Each item unlocks new commands and features!"
+            ),
+            .init(
+                image: "3",
+                title: "Parameters",
+                subTitle: "Keep an eye on your pet's stats to ensure it's not hungry or bored."
+            ),
+            .init(
+                image: "3",
+                title: "Intelligence",
+                subTitle: "Your cat remembers everything you do with it. Tap on it to find out what it’s thinking."
+            )
         ]
         
         let benefits: [PaywallBenefitItem] = [
-            .init(systemIcon: "wand.and.stars.inverse",
-                  title: "Unlimited",
-                  subtitle: "Create notes without any limits."),
-            .init(systemIcon: "icloud.and.arrow.up.fill",
-                  title: "Synchronization",
-                  subtitle: "Your notes will sync with all devices."),
-            .init(systemIcon: "sparkles.rectangle.stack",
-                  title: "Widgets",
-                  subtitle: "Access to all types of widgets")
+            .init(
+                systemIcon: "wand.and.stars.inverse",
+                  title: "Access unlimited editor features",
+                  subtitle: "Add new commands to the console or modify existing ones."
+            ),
+            .init(
+                systemIcon: "icloud.and.arrow.up.fill",
+                  title: "Creative freedom",
+                  subtitle: "Choose animations and sounds—complete creative freedom! You can even share your custom commands with us, and they might appear in future updates."
+            ),
+            .init(
+                systemIcon: "icloud.and.arrow.up.fill",
+                  title: "Pet’s attributes",
+                  subtitle: "Edit your pet’s attributes like hunger, intelligence, mood, and more—no restrictions."
+            ),
+            .init(
+                systemIcon: "icloud.and.arrow.up.fill",
+                  title: "Pet’s memory.",
+                  subtitle: "Modify your pet’s memory. If you want it to forget something unpleasant, the editor will help you."
+            ),
+            .init(
+                systemIcon: "icloud.and.arrow.up.fill",
+                  title: "Money",
+                  subtitle: "Add unlimited money to your account with ease."
+            )
         ]
         
         let settings = FastAppSettings(

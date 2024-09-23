@@ -15,19 +15,43 @@ struct SettingsView: View {
     var body: some View {
         List {
             
-            NavigationLink {
-                ItemsEditor()
-            } label: {
-                Text("Item Editor").bold()
+            Section {
+                Link("Messenger", destination: URL(string: "https://t.me/imbalanceFighter")!)
+                    .foregroundStyle(Color.primary)
+            } header: {
+                Label("Write to me if you have any questions or problems", systemImage: "envelope.badge.fill")
+            } footer: {
+                Text("I am waiting for your suggestions and comments")
             }
-
             
-            Button(action: {
-                params.changeMoney(val: 300)
-                Haptic.impact(style: .heavy)
-            }, label: {
-                Text("Add $300").bold()
-            })
+            
+            Section {
+                NavigationLink {
+                    ItemsEditor()
+                } label: {
+                    Text("Console Editor").bold()
+                }
+            } header: {
+                Label("Add new commands to the console or modify existing ones.", systemImage: "apple.terminal.fill")
+            } footer: {
+                Text("You can even share your custom commands with us, and they might appear in future updates.")
+            }
+            
+            
+            Section {
+                
+                Button(action: {
+                    params.changeMoney(val: 300)
+                    Haptic.impact(style: .heavy)
+                }, label: {
+                    Text("Add $300").bold()
+                })
+            } header: {
+                Label("Add money", systemImage: "banknote.fill")
+            } footer: {
+               
+            }
+            
             
             Section {
                 ForEach(Array(params.lastOwnerActions), id: \.self) { key in
@@ -42,7 +66,13 @@ struct SettingsView: View {
                         }).buttonStyle(BorderedButtonStyle())
                     }
                 }
+            } header: {
+                Label("Modify your pet’s memory.", systemImage: "externaldrive.fill.badge.timemachine")
+            } footer: {
+                Text("If you want it to forget something unpleasant, just delete it.")
             }
+            
+           
             
             Section {
                 
@@ -50,7 +80,7 @@ struct SettingsView: View {
                     params.clearitems()
                     Haptic.impact(style: .heavy)
                 }, label: {
-                    Text("Clear items").bold()
+                    Text("Clear all items").bold()
                 })
                 
                 ForEach(Array(params.itemOwnership.keys), id: \.self) { key in
@@ -75,7 +105,7 @@ struct SettingsView: View {
                 }
                 
             } header: {
-                Text("Items")
+                Text("Edit the items you've purchased")
             }
 
             
@@ -363,6 +393,8 @@ struct SettingsView: View {
             }
 
          
+        }.toolbar {
+            Text("Editor v1.1").font(.footnote)
         }
     }
 }
